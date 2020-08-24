@@ -85,14 +85,14 @@
                     <div class="row">
                         <div class="col md-6">
                             <center>
-                                <h2>Ubicación</h2>
-                                <img src="img-compuertas/posV1-z1.png" width="80%">
+                                <h2>Foto</h2>
+                                <img :src="this.imagen" class="rounded"  width="100%">
                             </center>
                         </div>
                         <div class="col md-6">
                             <center>
                                 <h2>Imágen</h2>
-                                <img src="img-compuertas/val1-z1.jpg" width="80%">
+                                <img src="C__Users_Lenovo-ComsLabs_Downloads_300x300_IMG_20200812_160057.jpg" width="80%">
                             </center>
                         </div>
                     </div>
@@ -128,6 +128,7 @@
                 start_at : '',
                 end_at : '',
                 dias : '',
+                imagen:null,
                 arrayCompuerta:[],
                 modal : 0,
                 tituloModal :'',
@@ -201,12 +202,18 @@
                             case 'ver':{
                                 //console.log(data);
                                 this.modal=1;
-                                this.tituloModal='Ver Compuerta';
+                                this.tituloModal="Imagen y detalles de " + data['nombre'];
                                 this.tipoAccion=2;
                                 this.compuerta_id=data['id'];
                                 this.start_at=data['start_at'];
                                 this.end_at=data['end_at'];
                                 this.dias=data['dias'];
+                                this.imagen = data['imagen'];
+                                let rename = "images/" + this.imagen;
+                                this.imagen = rename;
+                                //let rename = this.foto.slice(0, 1  );
+                                //this.foto = "storage"+rename+"g";
+                                console.log(rename);
                                 break;
                             }
                         }

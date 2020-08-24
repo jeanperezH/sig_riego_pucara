@@ -3939,6 +3939,7 @@ __webpack_require__.r(__webpack_exports__);
       start_at: '',
       end_at: '',
       dias: '',
+      imagen: null,
       arrayCompuerta: [],
       modal: 0,
       tituloModal: '',
@@ -4020,12 +4021,18 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   //console.log(data);
                   this.modal = 1;
-                  this.tituloModal = 'Ver Compuerta';
+                  this.tituloModal = "Imagen y detalles de " + data['nombre'];
                   this.tipoAccion = 2;
                   this.compuerta_id = data['id'];
                   this.start_at = data['start_at'];
                   this.end_at = data['end_at'];
                   this.dias = data['dias'];
+                  this.imagen = data['imagen'];
+                  var rename = "images/" + this.imagen;
+                  this.imagen = rename; //let rename = this.foto.slice(0, 1  );
+                  //this.foto = "storage"+rename+"g";
+
+                  console.log(rename);
                   break;
                 }
             }
@@ -11384,7 +11391,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-content {\n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar {\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #5a4f4f7a !important;\n}\n.mostrarImagen{\n        display: list-item !important;\n        opacity: 1 !important;\n        position: absolute !important;\n        background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red !important;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.modal-content {\r\n    width: 100% !important;\r\n    position: absolute !important;\n}\n.mostrar {\r\n    display: list-item !important;\r\n    opacity: 1 !important;\r\n    position: absolute !important;\r\n    background-color: #5a4f4f7a !important;\n}\n.mostrarImagen{\r\n        display: list-item !important;\r\n        opacity: 1 !important;\r\n        position: absolute !important;\r\n        background-color: #3c29297a !important;\n}\n.div-error{\r\n    display: flex;\r\n    justify-content: center;\n}\n.text-error{\r\n    color: red !important;\r\n    font-weight: bold;\n}\r\n", ""]);
 
 // exports
 
@@ -11631,7 +11638,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-content {\n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar {\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #5a4f4f7a !important;\n}\n.mostrarImagen{\n        display: list-item !important;\n        opacity: 1 !important;\n        position: absolute !important;\n        background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red !important;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.modal-content {\r\n    width: 100% !important;\r\n    position: absolute !important;\n}\n.mostrar {\r\n    display: list-item !important;\r\n    opacity: 1 !important;\r\n    position: absolute !important;\r\n    background-color: #5a4f4f7a !important;\n}\n.mostrarImagen{\r\n        display: list-item !important;\r\n        opacity: 1 !important;\r\n        position: absolute !important;\r\n        background-color: #3c29297a !important;\n}\n.div-error{\r\n    display: flex;\r\n    justify-content: center;\n}\n.text-error{\r\n    color: red !important;\r\n    font-weight: bold;\n}\r\n", ""]);
 
 // exports
 
@@ -47438,13 +47445,11 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Ubicación")]),
+                        _c("h2", [_vm._v("Foto")]),
                         _vm._v(" "),
                         _c("img", {
-                          attrs: {
-                            src: "img-compuertas/posV1-z1.png",
-                            width: "80%"
-                          }
+                          staticClass: "rounded",
+                          attrs: { src: this.imagen, width: "100%" }
                         })
                       ])
                     ],
@@ -47460,7 +47465,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("img", {
                           attrs: {
-                            src: "img-compuertas/val1-z1.jpg",
+                            src:
+                              "C__Users_Lenovo-ComsLabs_Downloads_300x300_IMG_20200812_160057.jpg",
                             width: "80%"
                           }
                         })
