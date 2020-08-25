@@ -5,21 +5,22 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <center><h2>ZONA 1</h2></center>
+                    <div class="col-md-8">
+                        <h2 class="text-center">Zona 1 - COMPUERTAS</h2>
+                        
                         <div class="input-group">
-                            <select class="form-control col-md-3" v-model="criterio" >
+                            <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">compuerta</option>
                                 <option value="start_at">Hora apertura</option>
                                 <option value="end_at">Hora cierre</option>
                                 <option value="dias">dia</option>
                             </select>
-                            <input type="text" v-model="buscar" @keyup.enter="listarCompuerta(1,buscar,criterio)" class="form-control" placeholder="texto a buscar" >
+                            <input type="text" class="form-control" v-model="buscar" @keyup.enter="listarCompuerta(1,buscar,criterio)"  placeholder="texto a buscar" >
                             <button type="submit" class="btn btn-primary" @click="listarCompuerta(1,buscar,criterio)" ><i class="fa fa-search"></i> Buscar</button>
                         </div>
                     </div>
                 </div>
-                <div class="tab-trans">
+                <div class="tab-trans table-responsive">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -43,6 +44,9 @@
                                 <td v-text="compuerta.utmy"></td>
                                 
                                 <td>
+                                    <button type="button" @click="abrirModalActualizar('valvula','actualizar',compuerta)" class="btn btn-info btn-sm" >
+                                    <i class="icon-pencil"></i>
+                                    </button> &nbsp;
                                     <button type="button" @click="abrirModal('compuerta','ver',compuerta)" class="btn btn-success btn-sm" >
                                     <i class="icon-eye"></i>
                                     </button> &nbsp;
@@ -71,9 +75,79 @@
         </div>
         <!-- Fin ejemplo de tabla Listado -->
     </div>
-    <!--Inicio del modal agregar/actualizar-->
+    <!--Inicio del modal actualizar-->
+    <div class="modal fade"  tabindex="-1" :class="{'actualizar' : modalActualizar}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" v-text="tituloModal"></h4>
+                    <button type="button" class="close" @click="cerrarModal()" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Nombre válvula</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="nombre" class="form-control" placeholder="Válvula X">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Horario</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="horario" class="form-control" placeholder="8:00 - 10:00">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Dias</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="dias" class="form-control" placeholder="lunes - viernes">                                        
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">UTMX</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="utmx" class="form-control" placeholder="">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">UTMY</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="utmy" class="form-control" placeholder="">                                        
+                    </div>
+                  </div>
+
+                  <!--<div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input" >Imagen</label>
+                    <div class="col-md-9">
+                      <input type="file" id="imagen" ref="imagen" v-on:change="img()" class="form-control" accept="image/*"/>
+                    </div>
+                  </div>-->
+                        
+                  <div v-show="errorCompuerta" class="form-group row div-error">
+                    <div class="text-center text-error">
+                      <div v-for="error in errorMostrarMsjCompuerta" :key="error" v-text="error">
+
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
+              <!--<button type="button" v-if="tipoAccion==1" class="btn btn-success" @click="registrarGallo()">Guardar</button>-->
+              <button type="button" v-if="tipoAccion==2" class="btn btn-success" @click="actualizarCompuerta()">Actualizar</button>
+            </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!--Inicio del modal ver Imagen y detalles-->
     <div class="modal fade"  tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" v-text="tituloModal"></h4>
@@ -83,15 +157,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
                                 <h2>Foto</h2>
                                 <img :src="this.imagen" width="100%">
                             </center>
                         </div>
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Descripción</h2>
+                                <h2>Hora y día</h2>
                                 <p>Una de las compuertas mas importantes de todo el sistema de riego</p>
                             </center>
                         </div>
@@ -100,7 +174,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
-                    <!-- poner imagen -->
+                    
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -117,14 +191,21 @@
         data(){
             return{
                 compuerta_id:0,
+                gid : 0,
                 nombre : '',
-                start_at : '',
-                end_at : '',
+                horario : '',
+                zona : '',
                 dias : '',
+                utmx : '',
+                utmy : '',
+                imagen:null,
+                geom : '',
                 arrayCompuerta:[],
                 modal : 0,
+                modalActualizar : 0,
                 tituloModal :'',
                 tipoAccion:0,
+                
                 errorCompuerta:0,
                 errorMostrarMsjCompuerta:[],
                 pagination :{
@@ -177,6 +258,9 @@
                     console.log(error);
                 });
             },
+            img() {
+            this.imagen = this.$refs.imagen.files[0];
+            },
             cambiarPagina(page,buscar,criterio){
                 let me = this;
                 //actualiza la pagina actual
@@ -185,21 +269,72 @@
                 me.listarCompuerta(page,buscar,criterio);
                 
             },
-            
+            actualizarCompuerta(){
+                /*if(this.validarCompuerta()){
+                    return;
+                }*/
+
+                let me = this;
+                axios.put('/compuertas/actualizar' ,{
+                    'gid':this.gid,
+                    'id':this.compuerta_id,
+                    'nombre':this.nombre,
+                    'horario':this.horario,
+                    'dias':this.dias,
+                    'zona':this.zona,
+                    'utmx':this.utmx,
+                    'utmy':this.utmy,
+                    'imagen':this.imagen,
+                    'geom':this.geom,
+                }).then(function(response){
+                    me.cerrarModal();
+                    me.listarCompuerta(1,'','nombre');
+                }).catch(function(error){
+                    console.log(error);
+                })
+            },
+            /*validarCompuerta(){
+                this.errorDocente=0;
+                this.errorMostrarMsjDocente=[];
+                if(!this.nombres || !this.apellidos ) this.errorMostrarMsjDocente.push("Los campos no pueden estar vacíos");
+                if(this.errorMostrarMsjDocente.length) this.errorDocente=1;
+                return this.errorDocente;
+            },*/
+            abrirModalActualizar(modelo, accion, data=[]){
+                switch(modelo){
+                    case "valvula":{
+                        switch(accion){
+                            case 'actualizar':{
+                                this.modalActualizar = 1;
+                                this.tituloModal="Actualizar " + data['nombre'];
+                                this.tipoAccion=2;
+                                this.gid=data['gid'];
+                                this.compuerta_id=data['id'];
+                                this.nombre=data['nombre'];
+                                this.horario=data['horario'];
+                                this.dias=data['dias'];
+                                this.zona=data['zona'];
+                                this.utmx=data['utmx'];
+                                this.utmy=data['utmy'];
+                                this.imagen = data['imagen'];
+                                this.geom = data['geom'];
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
             abrirModal(modelo, accion, data=[]){
                 switch(modelo){
                     case "compuerta":{
                         switch(accion){
                             
                             case 'ver':{
-                                //console.log(data);
+                                
                                 this.modal=1;
                                 this.tituloModal="Detalles de la " + data['nombre'];
-                                this.tipoAccion=2;
+                                //this.tipoAccion=2;
                                 this.compuerta_id=data['id'];
-                                this.start_at=data['start_at'];
-                                this.end_at=data['end_at'];
-                                this.dias=data['dias'];
                                 this.imagen = data['imagen'];
                                 var rename ="";
                                 var letra = String.fromCharCode(92);
@@ -217,11 +352,18 @@
             },
             cerrarModal(){
                 this.modal=0;
+                this.modalActualizar=0;
                 this.tituloModal='';
-                this.compuerta='';
-                this.start_at='';
-                this.end_at='';
+                this.gid=0;
+                this.compuerta_id='';
+                this.nombre='';
+                this.horario='';
                 this.dias='';
+                this.zona='';
+                this.utmx='';
+                this.utmy='';
+                this.imagen = null;
+                this.geom='';
             }
         },
         mounted() {
@@ -237,6 +379,12 @@
     }
     .mostrar{
         
+        display: list-item !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        background-color: #3c29297a !important;
+    }
+    .actualizar{
         display: list-item !important;
         opacity: 1 !important;
         position: absolute !important;

@@ -5928,14 +5928,15 @@ a.close.disabled {
   width: auto;
   margin: 0.5rem;
   pointer-events: none;
+  margin: 10px;
 }
 
 .modal.fade .modal-dialog {
   transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-transform: translate(0, -50px);
-  transform: translate(0, -50px);
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transform: translate(0, -25%);
+            transform: translate(0, -25%);;
 }
 
 @media (prefers-reduced-motion: reduce) {

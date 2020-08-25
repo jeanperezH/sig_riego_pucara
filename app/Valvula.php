@@ -17,7 +17,7 @@ class Valvula extends Model
         'utmx',
         'utmy',
         'imagen',
-        'geom geometry'
+        'geom'
     ];
     public $timestamps = false;
 }

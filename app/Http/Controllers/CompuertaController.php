@@ -54,13 +54,17 @@ class CompuertaController extends Controller
         if (!$request->ajax()) return redirect('/');
         
         $compuertas = Valvula::findOrFail($request->id);
+        $compuertas->gid=$request->gid;
         $compuertas->nombre=$request->nombre;
         $compuertas->horario=$request->horario;
         $compuertas->dias=$request->dias;
-        $compuertas->zona="1";
+        //$compuertas->zona="1";
         $compuertas->utmx=$request->utmx;
         $compuertas->utmy=$request->utmy;
         //$compuertas->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $compuertas->imagen=$request->file('imagen')->store('public');
+        }*/
         $compuertas->save();
     }
     // para zona2 2
@@ -94,6 +98,24 @@ class CompuertaController extends Controller
             'compuertas'=>$compuertas
         ];
     }
+    public function update2(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        
+        $compuertas = Valvula::findOrFail($request->id);
+        $compuertas->gid=$request->gid;
+        $compuertas->nombre=$request->nombre;
+        $compuertas->horario=$request->horario;
+        $compuertas->dias=$request->dias;
+        //$compuertas->zona="2";
+        $compuertas->utmx=$request->utmx;
+        $compuertas->utmy=$request->utmy;
+        //$compuertas->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $compuertas->imagen=$request->file('imagen')->store('public');
+        }*/
+        $compuertas->save();
+    }
     // para zona 3
     public function index3(Request $request)
     {
@@ -124,5 +146,23 @@ class CompuertaController extends Controller
             ],
             'compuertas'=>$compuertas
         ];
+    }
+    public function update3(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        
+        $compuertas = Valvula::findOrFail($request->id);
+        $compuertas->gid=$request->gid;
+        $compuertas->nombre=$request->nombre;
+        $compuertas->horario=$request->horario;
+        $compuertas->dias=$request->dias;
+        //$compuertas->zona="3";
+        $compuertas->utmx=$request->utmx;
+        $compuertas->utmy=$request->utmy;
+        //$compuertas->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $compuertas->imagen=$request->file('imagen')->store('public');
+        }*/
+        $compuertas->save();
     }
 }

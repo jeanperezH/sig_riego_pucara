@@ -15,11 +15,13 @@ Route::get('/chacras','ChacraController@index');
 
 //zona 2
 Route::get('/compuertas/2','CompuertaController@index2');
+Route::put('/compuertas/2/actualizar','CompuertaController@update');
 Route::get('/rios/2','RioController@index2');
 Route::get('/canales/2','CanalController@index2');
 Route::get('/chacras/2','ChacraController@index2');
 //zona 3
 Route::get('/compuertas/3','CompuertaController@index3');
+Route::put('/compuertas/3/actualizar','CompuertaController@update');
 Route::get('/rios/3','RioController@index3');
 Route::get('/canales/3','CanalController@index3');
 Route::get('/chacras/3','ChacraController@index3');
