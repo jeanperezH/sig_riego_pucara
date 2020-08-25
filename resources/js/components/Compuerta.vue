@@ -85,25 +85,18 @@
                     <div class="row">
                         <div class="col md-6">
                             <center>
-                                <h2>Ubicación</h2>
-                                <img src="img-compuertas/posV1-z1.png" width="80%">
+                                <h2>Foto</h2>
+                                <img :src="this.imagen" width="100%">
                             </center>
                         </div>
                         <div class="col md-6">
                             <center>
-                                <h2>Imágen</h2>
-                                <img src="img-compuertas/val1-z1.jpg" width="80%">
-                            </center>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col md-12">
-                            <center>
-                                <h2>Descripción</h2><br>
+                                <h2>Descripción</h2>
                                 <p>Una de las compuertas mas importantes de todo el sistema de riego</p>
                             </center>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
@@ -201,12 +194,21 @@
                             case 'ver':{
                                 //console.log(data);
                                 this.modal=1;
-                                this.tituloModal='Ver Compuerta';
+                                this.tituloModal="Detalles de la " + data['nombre'];
                                 this.tipoAccion=2;
                                 this.compuerta_id=data['id'];
                                 this.start_at=data['start_at'];
                                 this.end_at=data['end_at'];
                                 this.dias=data['dias'];
+                                this.imagen = data['imagen'];
+                                var rename ="";
+                                var letra = String.fromCharCode(92);
+                                rename = this.imagen.replace(letra ,'_');
+                                for (var i=0; i<this.imagen.length; i++){
+                                    rename = rename.replace(letra ,'_');
+                                }
+                                rename = rename.replace(':' ,'_');
+                                this.imagen = "images/" + rename;
                                 break;
                             }
                         }

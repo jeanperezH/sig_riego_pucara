@@ -86,24 +86,17 @@
                         <div class="col md-6">
                             <center>
                                 <h2>Foto</h2>
-                                <img :src="this.imagen" class="rounded"  width="100%">
+                                <img :src="this.imagen" width="100%">
                             </center>
                         </div>
                         <div class="col md-6">
                             <center>
-                                <h2>Imágen</h2>
-                                <img src="C__Users_Lenovo-ComsLabs_Downloads_300x300_IMG_20200812_160057.jpg" width="80%">
+                                <h2>Descripción</h2>
+                                <p>compuertas de la zona 2</p>
                             </center>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col md-12">
-                            <center>
-                                <h2>Descripción</h2><br>
-                                <p>Una de las compuertas mas importantes de todo el sistema de riego</p>
-                            </center>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
@@ -129,6 +122,7 @@
                 end_at : '',
                 dias : '',
                 imagen:null,
+                //letra : '',
                 arrayCompuerta:[],
                 modal : 0,
                 tituloModal :'',
@@ -202,23 +196,30 @@
                             case 'ver':{
                                 //console.log(data);
                                 this.modal=1;
-                                this.tituloModal="Imagen y detalles de " + data['nombre'];
+                                this.tituloModal="Detalles de la " + data['nombre'];
                                 this.tipoAccion=2;
                                 this.compuerta_id=data['id'];
                                 this.start_at=data['start_at'];
                                 this.end_at=data['end_at'];
                                 this.dias=data['dias'];
+
                                 this.imagen = data['imagen'];
-                                let rename = "images/" + this.imagen;
-                                this.imagen = rename;
-                                //let rename = this.foto.slice(0, 1  );
-                                //this.foto = "storage"+rename+"g";
-                                console.log(rename);
+                                var rename ="";
+                                var letra = String.fromCharCode(92);
+                                rename = this.imagen.replace(letra ,'_');
+                                for (var i=0; i<this.imagen.length; i++){
+                                    rename = rename.replace(letra ,'_');
+                                }
+                                rename = rename.replace(':' ,'_');
+                                this.imagen = "images/" + rename;
                                 break;
                             }
                         }
                     }
                 }
+            },
+            cifrarTabla: function(){
+                
             },
             cerrarModal(){
                 this.modal=0;

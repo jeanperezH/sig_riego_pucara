@@ -3677,13 +3677,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3773,12 +3766,23 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   //console.log(data);
                   this.modal = 1;
-                  this.tituloModal = 'Ver Compuerta';
+                  this.tituloModal = "Detalles de la " + data['nombre'];
                   this.tipoAccion = 2;
                   this.compuerta_id = data['id'];
                   this.start_at = data['start_at'];
                   this.end_at = data['end_at'];
                   this.dias = data['dias'];
+                  this.imagen = data['imagen'];
+                  var rename = "";
+                  var letra = String.fromCharCode(92);
+                  rename = this.imagen.replace(letra, '_');
+
+                  for (var i = 0; i < this.imagen.length; i++) {
+                    rename = rename.replace(letra, '_');
+                  }
+
+                  rename = rename.replace(':', '_');
+                  this.imagen = "images/" + rename;
                   break;
                 }
             }
@@ -3924,13 +3928,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3940,6 +3937,7 @@ __webpack_require__.r(__webpack_exports__);
       end_at: '',
       dias: '',
       imagen: null,
+      //letra : '',
       arrayCompuerta: [],
       modal: 0,
       tituloModal: '',
@@ -4021,24 +4019,30 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   //console.log(data);
                   this.modal = 1;
-                  this.tituloModal = "Imagen y detalles de " + data['nombre'];
+                  this.tituloModal = "Detalles de la " + data['nombre'];
                   this.tipoAccion = 2;
                   this.compuerta_id = data['id'];
                   this.start_at = data['start_at'];
                   this.end_at = data['end_at'];
                   this.dias = data['dias'];
                   this.imagen = data['imagen'];
-                  var rename = "images/" + this.imagen;
-                  this.imagen = rename; //let rename = this.foto.slice(0, 1  );
-                  //this.foto = "storage"+rename+"g";
+                  var rename = "";
+                  var letra = String.fromCharCode(92);
+                  rename = this.imagen.replace(letra, '_');
 
-                  console.log(rename);
+                  for (var i = 0; i < this.imagen.length; i++) {
+                    rename = rename.replace(letra, '_');
+                  }
+
+                  rename = rename.replace(':', '_');
+                  this.imagen = "images/" + rename;
                   break;
                 }
             }
           }
       }
     },
+    cifrarTabla: function cifrarTabla() {},
     cerrarModal: function cerrarModal() {
       this.modal = 0;
       this.tituloModal = '';
@@ -4064,13 +4068,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4274,12 +4271,23 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   //console.log(data);
                   this.modal = 1;
-                  this.tituloModal = 'Ver Compuerta';
+                  this.tituloModal = "Detalles de la " + data['nombre'];
                   this.tipoAccion = 2;
                   this.compuerta_id = data['id'];
                   this.start_at = data['start_at'];
                   this.end_at = data['end_at'];
                   this.dias = data['dias'];
+                  this.imagen = data['imagen'];
+                  var rename = "";
+                  var letra = String.fromCharCode(92);
+                  rename = this.imagen.replace(letra, '_');
+
+                  for (var i = 0; i < this.imagen.length; i++) {
+                    rename = rename.replace(letra, '_');
+                  }
+
+                  rename = rename.replace(':', '_');
+                  this.imagen = "images/" + rename;
                   break;
                 }
             }
@@ -47004,13 +47012,10 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Ubicación")]),
+                        _c("h2", [_vm._v("Foto")]),
                         _vm._v(" "),
                         _c("img", {
-                          attrs: {
-                            src: "img-compuertas/posV1-z1.png",
-                            width: "80%"
-                          }
+                          attrs: { src: this.imagen, width: "100%" }
                         })
                       ])
                     ],
@@ -47022,28 +47027,7 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imágen")]),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: {
-                            src: "img-compuertas/val1-z1.jpg",
-                            width: "80%"
-                          }
-                        })
-                      ])
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col md-12" },
-                    [
-                      _c("center", [
                         _c("h2", [_vm._v("Descripción")]),
-                        _c("br"),
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
@@ -47448,7 +47432,6 @@ var render = function() {
                         _c("h2", [_vm._v("Foto")]),
                         _vm._v(" "),
                         _c("img", {
-                          staticClass: "rounded",
                           attrs: { src: this.imagen, width: "100%" }
                         })
                       ])
@@ -47461,35 +47444,9 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imágen")]),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "C__Users_Lenovo-ComsLabs_Downloads_300x300_IMG_20200812_160057.jpg",
-                            width: "80%"
-                          }
-                        })
-                      ])
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col md-12" },
-                    [
-                      _c("center", [
                         _c("h2", [_vm._v("Descripción")]),
-                        _c("br"),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Una de las compuertas mas importantes de todo el sistema de riego"
-                          )
-                        ])
+                        _c("p", [_vm._v("compuertas de la zona 2")])
                       ])
                     ],
                     1
@@ -47885,13 +47842,10 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Ubicación")]),
+                        _c("h2", [_vm._v("Foto")]),
                         _vm._v(" "),
                         _c("img", {
-                          attrs: {
-                            src: "img-compuertas/posV1-z1.png",
-                            width: "80%"
-                          }
+                          attrs: { src: this.imagen, width: "100%" }
                         })
                       ])
                     ],
@@ -47903,34 +47857,9 @@ var render = function() {
                     { staticClass: "col md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imágen")]),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: {
-                            src: "img-compuertas/val1-z1.jpg",
-                            width: "80%"
-                          }
-                        })
-                      ])
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col md-12" },
-                    [
-                      _c("center", [
                         _c("h2", [_vm._v("Descripción")]),
-                        _c("br"),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Una de las compuertas mas importantes de todo el sistema de riego"
-                          )
-                        ])
+                        _c("p", [_vm._v("Compuerta de la zona 3")])
                       ])
                     ],
                     1
