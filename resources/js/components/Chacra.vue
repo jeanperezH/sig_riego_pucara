@@ -5,12 +5,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <center><h2>ZONA 1</h2></center>
+                    <div class="col-md-8">
+                        <center><h2>ZONA 1 - CHACRAS</h2></center>
                         <div class="input-group">
-                            <select class="form-control col-md-3" v-model="criterio" >
+                            <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">Chacra</option>
-                                <option value="tipo_cultiv">Tipo cultivo</option>
+                                <option value="tipo_cutiv">Tipo cultivo</option>
                                 
                             </select>
                             <input type="text" v-model="buscar" @keyup.enter="listarChacra(1,buscar,criterio)" class="form-control" placeholder="Zona de cultivo" >
@@ -33,11 +33,14 @@
                             <tr v-for="chacra in arrayChacra" :key="chacra.id">
                                 
                                 <td v-text="chacra.nombre"></td>
-                                <td v-text="chacra.area_km2"></td>
+                                <td v-text="chacra.area_km2 + ' Km2'"></td>
                                 <td v-text="chacra.tipo_cutiv"></td>
                                 <td v-text="chacra.zona"></td>
                                 
                                 <td>
+                                    <button type="button" @click="abrirModalActualizar('chacra','actualizar',chacra)" class="btn btn-info btn-sm" >
+                                    <i class="icon-pencil"></i>
+                                    </button> &nbsp;
                                     <button type="button" @click="abrirModal('chacra','ver',chacra)" class="btn btn-success btn-sm" >
                                     <i class="icon-eye"></i>
                                     </button> &nbsp;
@@ -66,9 +69,66 @@
         </div>
         <!-- Fin ejemplo de tabla Listado -->
     </div>
-    <!--Inicio del modal agregar/actualizar-->
+    <!--Inicio del modal actualizar-->
+    <div class="modal fade"  tabindex="-1" :class="{'actualizar' : modalActualizar}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" v-text="tituloModal"></h4>
+                    <button type="button" class="close" @click="cerrarModal()" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Nombre río</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="nombre" class="form-control" placeholder="Río X">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Área</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="area_km2" class="form-control" placeholder="20">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Tipo de cultivo</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="tipo_cutiv" class="form-control" placeholder="Hortalizas">                                        
+                    </div>
+                  </div>
+                  
+                  <!--<div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input" >Imagen</label>
+                    <div class="col-md-9">
+                      <input type="file" id="imagen" ref="imagen" v-on:change="img()" class="form-control" accept="image/*"/>
+                    </div>
+                  </div>-->
+                        
+                  <div v-show="errorChacra" class="form-group row div-error">
+                    <div class="text-center text-error">
+                      <div v-for="error in errorMostrarMsjChacra" :key="error" v-text="error">
+
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
+              
+              <button type="button" v-if="tipoAccion==2" class="btn btn-success" @click="actualizarChacra()">Actualizar</button>
+            </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!--Inicio del modal ver imagen y detallesr-->
     <div class="modal fade"  tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" v-text="tituloModal"></h4>
@@ -78,27 +138,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Ubicación</h2>
-                                <img src="img-compuertas/posV1-z1.png" width="80%">
+                                <h2>Imagen</h2>
+                                <img :src="this.imagen" width="100%">
                             </center>
                         </div>
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Imágen</h2>
-                                <img src="img-compuertas/val1-z1.jpg" width="80%">
-                            </center>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col md-12">
-                            <center>
-                                <h2>Descripción</h2><br>
-                                <p>Zonas de Cultivo</p>
+                                <h2>Detalles</h2>
+                                <p>Chacras del sistema de riego</p>
                             </center>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
@@ -119,12 +172,16 @@
         data(){
             return{
                 chacra_id:0,
+                gid:0,
                 nombre : '',
                 area_km2 : '',
-                tipo_cultiv : '',
+                tipo_cutiv : '',
+                zona:'',
                 imagen : '',
+                geom:'',
                 arrayChacra:[],
                 modal : 0,
+                modalActualizar : 0,
                 tituloModal :'',
                 tipoAccion:0,
                 errorChacra:0,
@@ -179,6 +236,9 @@
                     console.log(error);
                 });
             },
+            img() {
+            this.imagen = this.$refs.imagen.files[0];
+            },
             cambiarPagina(page,buscar,criterio){
                 let me = this;
                 //actualiza la pagina actual
@@ -187,21 +247,70 @@
                 me.listarChacra(page,buscar,criterio);
                 
             },
-            
+            actualizarChacra(){
+                /*if(this.validarChacra()){
+                    return;
+                }*/
+
+                let me = this;
+                axios.put('/chacras/actualizar' ,{
+                    'gid':this.gid,
+                    'id':this.chacra_id,
+                    'nombre':this.nombre,
+                    'area_km2':this.area_km2,
+                    'tipo_cutiv':this.tipo_cutiv,
+                    'zona':this.zona,
+                    'imagen':this.imagen,
+                    'geom':this.geom,
+                    
+                }).then(function(response){
+                    me.cerrarModal();
+                    me.listarChacra(1,'','nombre');
+                }).catch(function(error){
+                    console.log(error);
+                })
+            },
+            abrirModalActualizar(modelo, accion, data=[]){
+                switch(modelo){
+                    case "chacra":{
+                        switch(accion){
+                            case 'actualizar':{
+                                this.modalActualizar = 1;
+                                this.tituloModal="Actualizar " + data['nombre'];
+                                this.tipoAccion=2;
+                                                              
+                                this.gid=data['gid'];
+                                this.chacra_id=data['id'];
+                                this.nombre=data['nombre'];
+                                this.area_km2=data['area_km2'];
+                                this.tipo_cutiv=data['tipo_cutiv'];
+                                this.zona=data['zona'];
+                                this.imagen = data['imagen'];
+                                this.geom = data['geom'];
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
             abrirModal(modelo, accion, data=[]){
                 switch(modelo){
                     case "chacra":{
                         switch(accion){
-                            
                             case 'ver':{
-                                //console.log(data);
                                 this.modal=1;
-                                this.tituloModal='Ver chacra';
-                                this.tipoAccion=2;
-                                //this.compuerta_id=data['id'];
-                                //this.start_at=data['start_at'];
-                                //this.end_at=data['end_at'];
-                                //this.dias=data['dias'];
+                                this.tituloModal="Detalles del " + data['nombre'];
+                                
+                                this.chacra_id=data['id'];
+                                this.imagen = data['imagen'];
+                                var rename ="";
+                                var letra = String.fromCharCode(92);
+                                rename = this.imagen.replace(letra ,'_');
+                                for (var i=0; i<this.imagen.length; i++){
+                                    rename = rename.replace(letra ,'_');
+                                }
+                                rename = rename.replace(':' ,'_');
+                                this.imagen = "images/" + rename;
                                 break;
                             }
                         }
@@ -210,13 +319,16 @@
             },
             cerrarModal(){
                 this.modal=0;
+                this.modalActualizar=0;
+                this.chacra_id=0;
+                this.gid=0;
                 this.tituloModal='';
                 this.nombre='';
                 this.area_km2='';
-                this.tipo_cultiv='';
+                this.tipo_cutiv='';
                 this.zona='';
                 this.imagen='';
-                
+                this.geom='';
             }
         },
         mounted() {

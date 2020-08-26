@@ -8,7 +8,8 @@ class Canal extends Model
 {
     protected $table ='canales';
     protected $fillable =[
-        
+        'gid',
+        'id',
         'nombre',
         'longitud',
         'zona',

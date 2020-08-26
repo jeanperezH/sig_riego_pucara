@@ -5,10 +5,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <center><h2>ZONA 1</h2></center>
+                    <div class="col-md-8">
+                        <center><h2>ZONA 1 - CANALES DE RIEGO</h2></center>
                         <div class="input-group">
-                            <select class="form-control col-md-3" v-model="criterio" >
+                            <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">Canal de riego</option>
                                 <option value="valv_i">Válvula apertura</option>
                                 <option value="valv_f">Válvula cierre</option>
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-trans">
+                <div class="tab-trans table-responsive">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -34,12 +34,15 @@
                             <tr v-for="canal in arrayCanal" :key="canal.id">
                                 
                                 <td v-text="canal.nombre"></td>
-                                <td v-text="canal.longitud"></td>
+                                <td v-text="canal.longitud  + ' m'"></td>
                                 <td v-text="canal.zona"></td>
                                 <td v-text="canal.valv_i"></td>
                                 <td v-text="canal.valv_f"></td>
                                 
                                 <td>
+                                    <button type="button" @click="abrirModalActualizar('canal','actualizar',canal)" class="btn btn-info btn-sm" >
+                                    <i class="icon-pencil"></i>
+                                    </button> &nbsp;
                                     <button type="button" @click="abrirModal('canal','ver',canal)" class="btn btn-success btn-sm" >
                                     <i class="icon-eye"></i>
                                     </button> &nbsp;
@@ -68,9 +71,71 @@
         </div>
         <!-- Fin ejemplo de tabla Listado -->
     </div>
-    <!--Inicio del modal agregar/actualizar-->
+    <!--Inicio del modal actualizar-->
+    <div class="modal fade"  tabindex="-1" :class="{'actualizar' : modalActualizar}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" v-text="tituloModal"></h4>
+                    <button type="button" class="close" @click="cerrarModal()" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Canal de riego</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="nombre" class="form-control" placeholder="canal de riego X">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Longitud</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="longitud" class="form-control" placeholder="100">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Válvula de apertura</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="valv_i" class="form-control" placeholder="válvula x">                                        
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Válvula de cierre</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="valv_f" class="form-control" placeholder="válvula y">                                        
+                    </div>
+                  </div>
+                  <!--<div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input" >Imagen</label>
+                    <div class="col-md-9">
+                      <input type="file" id="imagen" ref="imagen" v-on:change="img()" class="form-control" accept="image/*"/>
+                    </div>
+                  </div>-->
+                        
+                  <div v-show="errorCanal" class="form-group row div-error">
+                    <div class="text-center text-error">
+                      <div v-for="error in errorMostrarMsjCanal" :key="error" v-text="error">
+
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
+              
+              <button type="button" v-if="tipoAccion==2" class="btn btn-success" @click="actualizarCanal()">Actualizar</button>
+            </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!--Inicio del modal ver imagen y detalles-->
     <div class="modal fade"  tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-dialog modal-primary modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" v-text="tituloModal"></h4>
@@ -80,27 +145,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Ubicación</h2>
-                                <img src="img-compuertas/posV1-z1.png" width="80%">
+                                <h2>Imagen</h2>
+                                <img :src="this.imagen" width="100%">
                             </center>
                         </div>
-                        <div class="col md-6">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Imágen</h2>
-                                <img src="img-compuertas/val1-z1.jpg" width="80%">
-                            </center>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col md-12">
-                            <center>
-                                <h2>Descripción</h2><br>
-                                <p>Canales de riego</p>
+                                <h2>Detalles</h2>
+                                <p>Canales de Riego </p>
                             </center>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" @click="cerrarModal()">Cerrar</button>
@@ -121,14 +179,17 @@
         data(){
             return{
                 canal_id:0,
+                gid:0,
                 nombre : '',
                 longitud : '',
                 zona : '',
                 imagen : '',
                 valv_i : '',
                 valv_f : '',
+                geom:'',
                 arrayCanal:[],
                 modal : 0,
+                modalActualizar:0,
                 tituloModal :'',
                 tipoAccion:0,
                 errorCanal:0,
@@ -191,21 +252,73 @@
                 me.listarCanal(page,buscar,criterio);
                 
             },
-            
+            actualizarCanal(){
+                /*if(this.validarCanal()){
+                    return;
+                }*/
+
+                let me = this;
+                axios.put('/canales/actualizar' ,{
+                    'gid':this.gid,
+                    'id':this.canal_id,
+                    'nombre':this.nombre,
+                    'longitud':this.longitud,
+                    'valv_i':this.valv_i,
+                    'valv_f':this.valv_f,
+                    'imagen':this.imagen,
+                    'zona':this.zona,
+                    'geom':this.geom,
+                    
+                }).then(function(response){
+                    me.cerrarModal();
+                    me.listarCanal(1,'','nombre');
+                }).catch(function(error){
+                    console.log(error);
+                })
+            },
+            abrirModalActualizar(modelo, accion, data=[]){
+                switch(modelo){
+                    case "canal":{
+                        switch(accion){
+                            case 'actualizar':{
+                                this.modalActualizar = 1;
+                                this.tituloModal="Actualizar " + data['nombre'];
+                                this.tipoAccion=2;
+                                                              
+                                this.gid=data['gid'];
+                                this.canal_id=data['id'];
+                                this.nombre=data['nombre'];
+                                this.longitud=data['longitud'];
+                                this.zona=data['zona'];
+                                this.imagen = data['imagen'];
+                                this.valv_i = data['valv_i'];
+                                this.valv_f = data['valv_f'];
+                                this.geom = data['geom'];
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
             abrirModal(modelo, accion, data=[]){
                 switch(modelo){
                     case "canal":{
                         switch(accion){
                             
                             case 'ver':{
-                                //console.log(data);
                                 this.modal=1;
-                                this.tituloModal='Ver canal';
-                                this.tipoAccion=2;
-                                //this.compuerta_id=data['id'];
-                                //this.start_at=data['start_at'];
-                                //this.end_at=data['end_at'];
-                                //this.dias=data['dias'];
+                                this.tituloModal="Detalles del " + data['nombre'];
+                                
+                                this.canal_id=data['id'];
+                                this.imagen = data['imagen'];
+                                var rename ="";
+                                var letra = String.fromCharCode(92);
+                                rename = this.imagen.replace(letra ,'_');
+                                for (var i=0; i<this.imagen.length; i++){
+                                    rename = rename.replace(letra ,'_');
+                                }
+                                rename = rename.replace(':' ,'_');
+                                this.imagen = "images/" + rename;
                                 break;
                             }
                         }
@@ -214,6 +327,9 @@
             },
             cerrarModal(){
                 this.modal=0;
+                this.modalActualizar=0;
+                this.gid=0;
+                this.canal_id=0;
                 this.tituloModal='';
                 this.nombre='';
                 this.longitud='';
@@ -221,6 +337,7 @@
                 this.imagen='';
                 this.valv_i='';
                 this.valv_f='';
+                this.geom='';
             }
         },
         mounted() {
@@ -236,6 +353,12 @@
     }
     .mostrar{
         
+        display: list-item !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        background-color: #3c29297a !important;
+    }
+    .actualizar{
         display: list-item !important;
         opacity: 1 !important;
         position: absolute !important;

@@ -37,7 +37,22 @@ class ChacraController extends Controller
             'chacras'=>$chacras
         ];
     }
-
+    public function update(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        
+        $chacras = Chacra::findOrFail($request->id);
+        $chacras->gid=$request->gid;
+        $chacras->nombre=$request->nombre;
+        $chacras->area_km2=$request->area_km2;
+        $chacras->tipo_cutiv=$request->tipo_cutiv;
+        
+        //$chacras->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $chacras->imagen=$request->file('imagen')->store('public');
+        }*/
+        $chacras->save();
+    }
     public function index2(Request $request)
     {
         if (!$request->ajax()) return redirect('/');

@@ -37,6 +37,23 @@ class CanalController extends Controller
             'canales'=>$canales
         ];
     }
+    public function update(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        
+        $canales = Canal::findOrFail($request->id);
+        $canales->gid=$request->gid;
+        $canales->nombre=$request->nombre;
+        $canales->longitud=$request->longitud;
+        $canales->valv_i=$request->valv_i;
+        $canales->valv_f=$request->valv_f;
+        
+        //$canales->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $canales->imagen=$request->file('imagen')->store('public');
+        }*/
+        $canales->save();
+    }
     public function index2(Request $request)
     {
         if (!$request->ajax()) return redirect('/');

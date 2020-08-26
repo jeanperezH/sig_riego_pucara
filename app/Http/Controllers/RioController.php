@@ -37,6 +37,22 @@ class RioController extends Controller
             'rios'=>$rios
         ];
     }
+    public function update(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        
+        $rios = Rio::findOrFail($request->id);
+        $rios->gid=$request->gid;
+        $rios->nombre=$request->nombre;
+        $rios->tipo_rio=$request->tipo_rio;
+        $rios->longitud_m=$request->longitud_m;
+        
+        //$rios->imagen=$request->imagen;
+        /*if ($request->hasFile('imagen')) {
+            $rios->imagen=$request->file('imagen')->store('public');
+        }*/
+        $rios->save();
+    }
 
     public function index2(Request $request)
     {
