@@ -11,9 +11,9 @@
                         <div class="input-group">
                             <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">compuerta</option>
-                                <option value="start_at">Hora apertura</option>
-                                <option value="end_at">Hora cierre</option>
-                                <option value="dias">dia</option>
+                                <option value="hora_inici">Hora Apertura</option>
+                                <option value="hora_final">Hora Cierre</option>
+                                
                             </select>
                             <input type="text" class="form-control" v-model="buscar" @keyup.enter="listarCompuerta(1,buscar,criterio)"  placeholder="texto a buscar" >
                             <button type="submit" class="btn btn-primary" @click="listarCompuerta(1,buscar,criterio)" ><i class="fa fa-search"></i> Buscar</button>
@@ -25,8 +25,8 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th>Compuerta</th>
-                                <th>horario</th>
-                                <th>dias</th>
+                                <th>Hora Apertura</th>
+                                <th>Hora Cierre</th>
                                 <th>zona</th>
                                 <th>UTMX</th>
                                 <th>UTMY</th>
@@ -37,8 +37,8 @@
                             <tr v-for="compuerta in arrayCompuerta" :key="compuerta.id">
                                 
                                 <td v-text="compuerta.nombre"></td>
-                                <td v-text="compuerta.horario"></td>
-                                <td v-text="compuerta.dias"></td>
+                                <td v-text="compuerta.hora_inici"></td>
+                                <td v-text="compuerta.hora_final"></td>
                                 <td v-text="compuerta.zona"></td>
                                 <td v-text="compuerta.utmx"></td>
                                 <td v-text="compuerta.utmy"></td>
@@ -94,15 +94,15 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-3 form-control-label" for="text-input">Horario</label>
+                      <label class="col-md-3 form-control-label" for="text-input">Hora Apertura</label>
                     <div class="col-md-9">
-                      <input type="text" v-model="horario" class="form-control" placeholder="8:00 - 10:00">                                        
+                      <input type="text" v-model="hora_inici" class="form-control" placeholder="8:00 - 10:00">                                        
                     </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-3 form-control-label" for="text-input">Dias</label>
+                      <label class="col-md-3 form-control-label" for="text-input">Hora Cierre</label>
                     <div class="col-md-9">
-                      <input type="text" v-model="dias" class="form-control" placeholder="lunes - viernes">                                        
+                      <input type="text" v-model="hora_final" class="form-control" placeholder="lunes - viernes">                                        
                     </div>
                   </div>
                   
@@ -165,8 +165,10 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Hora y día</h2>
-                                <p>Una de las compuertas mas importantes de todo el sistema de riego</p>
+                                <h2>DETALLES</h2>
+                                <h6 class="card-text text-left">Compuerta: <div class="text-modalVerImagen"><td v-text="nombre"></td></div> </h6>
+                                <h6 class="card-text text-left">Hora de Apertura:<td v-text="hora_inici" class="text-modalVerImagen"></td></h6>
+                                <h6 class="card-text text-left">Hora de Cierre:<td v-text="hora_final" class="text-modalVerImagen"></td></h6>
                             </center>
                         </div>
                     </div>
@@ -193,9 +195,9 @@
                 compuerta_id:0,
                 gid : 0,
                 nombre : '',
-                horario : '',
+                hora_inici : '',
                 zona : '',
-                dias : '',
+                hora_final : '',
                 utmx : '',
                 utmy : '',
                 imagen:null,
@@ -275,12 +277,12 @@
                 }*/
 
                 let me = this;
-                axios.put('/compuertas/2/actualizar' ,{
+                axios.put('/compuertas/actualizar' ,{
                     'gid':this.gid,
                     'id':this.compuerta_id,
                     'nombre':this.nombre,
-                    'horario':this.horario,
-                    'dias':this.dias,
+                    'hora_inici':this.hora_inici,
+                    'hora_final':this.hora_final,
                     'zona':this.zona,
                     'utmx':this.utmx,
                     'utmy':this.utmy,
@@ -311,8 +313,8 @@
                                 this.gid=data['gid'];
                                 this.compuerta_id=data['id'];
                                 this.nombre=data['nombre'];
-                                this.horario=data['horario'];
-                                this.dias=data['dias'];
+                                this.hora_inici=data['hora_inici'];
+                                this.hora_final=data['hora_final'];
                                 this.zona=data['zona'];
                                 this.utmx=data['utmx'];
                                 this.utmy=data['utmy'];
@@ -334,6 +336,9 @@
                                 this.modal=1;
                                 this.tituloModal="Detalles de la " + data['nombre'];
                                 //this.tipoAccion=2;
+                                this.nombre = data['nombre'];
+                                this.hora_inici = data['hora_inici'];
+                                this.hora_final = data['hora_final'];
                                 this.compuerta_id=data['id'];
                                 this.imagen = data['imagen'];
                                 var rename ="";
@@ -357,8 +362,8 @@
                 this.gid=0;
                 this.compuerta_id='';
                 this.nombre='';
-                this.horario='';
-                this.dias='';
+                this.hora_inici='';
+                this.hora_final='';
                 this.zona='';
                 this.utmx='';
                 this.utmy='';

@@ -11,7 +11,7 @@
                             <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">Chacra</option>
                                 <option value="tipo_cutiv">Tipo cultivo</option>
-                                
+                                <option value="nombre_usu">Propietario</option>
                             </select>
                             <input type="text" v-model="buscar" @keyup.enter="listarChacra(1,buscar,criterio)" class="form-control" placeholder="Zona de cultivo" >
                             <button type="submit" class="btn btn-primary" @click="listarChacra(1,buscar,criterio)" ><i class="fa fa-search"></i> Buscar</button>
@@ -25,6 +25,7 @@
                                 <th>Chacra</th>
                                 <th>Area</th>
                                 <th>Tipo cultivo</th>
+                                <th>Propietario</th>
                                 <th>Zona</th>
                                 <th>imagen</th>
                             </tr>
@@ -35,6 +36,7 @@
                                 <td v-text="chacra.nombre"></td>
                                 <td v-text="chacra.area_km2 + ' Km2'"></td>
                                 <td v-text="chacra.tipo_cutiv"></td>
+                                <td v-text="chacra.nombre_usu"></td>
                                 <td v-text="chacra.zona"></td>
                                 
                                 <td>
@@ -99,6 +101,12 @@
                       <input type="text" v-model="tipo_cutiv" class="form-control" placeholder="Hortalizas">                                        
                     </div>
                   </div>
+                  <div class="form-group row">
+                      <label class="col-md-3 form-control-label" for="text-input">Propietario</label>
+                    <div class="col-md-9">
+                      <input type="text" v-model="nombre_usu" class="form-control" placeholder="Hortalizas">                                        
+                    </div>
+                  </div>
                   
                   <!--<div class="form-group row">
                       <label class="col-md-3 form-control-label" for="text-input" >Imagen</label>
@@ -146,8 +154,10 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Detalles</h2>
-                                <p>Chacras del sistema de riego</p>
+                                <h2>DETALLES</h2>
+                                <h6 class="card-text text-left">Chacra: <div class="text-modalVerImagen"><td v-text="nombre"></td></div> </h6>
+                                <h6 class="card-text text-left">Tipo de cultivo:<td v-text="tipo_cutiv" class="text-modalVerImagen"></td></h6>
+                                <h6 class="card-text text-left">Propietario:<td v-text="nombre_usu" class="text-modalVerImagen"></td></h6>
                             </center>
                         </div>
                     </div>
@@ -176,6 +186,7 @@
                 nombre : '',
                 area_km2 : '',
                 tipo_cutiv : '',
+                nombre_usu : '',
                 zona:'',
                 imagen : '',
                 geom:'',
@@ -261,6 +272,7 @@
                     'tipo_cutiv':this.tipo_cutiv,
                     'zona':this.zona,
                     'imagen':this.imagen,
+                    'nombre_usu':this.nombre_usu,
                     'geom':this.geom,
                     
                 }).then(function(response){
@@ -286,6 +298,7 @@
                                 this.tipo_cutiv=data['tipo_cutiv'];
                                 this.zona=data['zona'];
                                 this.imagen = data['imagen'];
+                                this.nombre_usu = data['nombre_usu'];
                                 this.geom = data['geom'];
                                 break;
                             }
@@ -302,6 +315,9 @@
                                 this.tituloModal="Detalles del " + data['nombre'];
                                 
                                 this.chacra_id=data['id'];
+                                this.nombre=data['nombre'];
+                                this.tipo_cutiv=data['tipo_cutiv'];
+                                this.nombre_usu=data['nombre_usu'];
                                 this.imagen = data['imagen'];
                                 var rename ="";
                                 var letra = String.fromCharCode(92);
@@ -324,6 +340,7 @@
                 this.gid=0;
                 this.tituloModal='';
                 this.nombre='';
+                this.nombre_usu='';
                 this.area_km2='';
                 this.tipo_cutiv='';
                 this.zona='';

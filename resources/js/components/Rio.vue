@@ -9,8 +9,8 @@
                         <center><h2>ZONA 1 - RIOS</h2></center>
                         <div class="input-group">
                             <select class="form-control col-md-4" v-model="criterio" >
-                                <option value="nombre">Rio</option>
-                                <option value="tipo_rio">Ripo rio</option>
+                                <option value="nombre_rio">Rio</option>
+                                <option value="tipo_rio">Tipo rio</option>
                                 
                             </select>
                             <input type="text" v-model="buscar" @keyup.enter="listarRio(1,buscar,criterio)" class="form-control" placeholder="rio a buscar" >
@@ -32,7 +32,7 @@
                         <tbody>
                             <tr v-for="rio in arrayRio" :key="rio.id">
                                 
-                                <td v-text="rio.nombre"></td>
+                                <td v-text="rio.nombre_rio"></td>
                                 <td v-text="rio.tipo_rio"></td>
                                 <td v-text="rio.longitud_m  + ' m'"></td>
                                 <td v-text="rio.zona"></td>
@@ -83,7 +83,7 @@
                   <div class="form-group row">
                       <label class="col-md-3 form-control-label" for="text-input">Nombre río</label>
                     <div class="col-md-9">
-                      <input type="text" v-model="nombre" class="form-control" placeholder="Río X">                                        
+                      <input type="text" v-model="nombre_rio" class="form-control" placeholder="Río X">                                        
                     </div>
                   </div>
                   <div class="form-group row">
@@ -139,14 +139,16 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Imagen</h2>
+                                <h2>IMAGEN</h2>
                                 <img :src="this.imagen" width="100%">
                             </center>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Hora y día</h2>
-                                <p>Rios mas importantes de todo el sistema de riego</p>
+                                <h2>DETALLES</h2>
+                                <h6 class="card-text text-left">Nombre del río: <div class="text-modalVerImagen"><td v-text="nombre_rio"></td></div> </h6>
+                                <h6 class="card-text text-left">Tipo de río:<td v-text="tipo_rio" class="text-modalVerImagen"></td></h6>
+                                <h6 class="card-text text-left">Longitud:<td v-text="longitud_m" class="text-modalVerImagen"></td></h6>
                             </center>
                         </div>
                     </div>
@@ -172,7 +174,7 @@
             return{
                 rio_id:0,
                 gid : 0,
-                nombre : '',
+                nombre_rio : '',
                 tipo_rio : '',
                 longitud_m : '',
                 imagen:null,
@@ -194,7 +196,7 @@
                     'to' :0,
                 },
                 offset:3,
-                criterio: 'nombre',
+                criterio: 'nombre_rio',
                 buscar:''
             }
         },
@@ -255,7 +257,7 @@
                 axios.put('/rios/actualizar' ,{
                     'gid':this.gid,
                     'id':this.rio_id,
-                    'nombre':this.nombre,
+                    'nombre_rio':this.nombre_rio,
                     'tipo_rio':this.tipo_rio,
                     'longitud_m':this.longitud_m,
                     'imagen':this.imagen,
@@ -264,7 +266,7 @@
                     
                 }).then(function(response){
                     me.cerrarModal();
-                    me.listarRio(1,'','nombre');
+                    me.listarRio(1,'','nombre_rio');
                 }).catch(function(error){
                     console.log(error);
                 })
@@ -275,12 +277,12 @@
                         switch(accion){
                             case 'actualizar':{
                                 this.modalActualizar = 1;
-                                this.tituloModal="Actualizar " + data['nombre'];
+                                this.tituloModal="Actualizar " + data['nombre_rio'];
                                 this.tipoAccion=2;
                                                               
                                 this.gid=data['gid'];
                                 this.rio_id=data['id'];
-                                this.nombre=data['nombre'];
+                                this.nombre_rio=data['nombre_rio'];
                                 this.tipo_rio=data['tipo_rio'];
                                 this.longitud_m=data['longitud_m'];
                                 this.imagen = data['imagen'];
@@ -299,9 +301,12 @@
                             
                             case 'ver':{
                                 this.modal=1;
-                                this.tituloModal="Detalles del " + data['nombre'];
+                                this.tituloModal="Detalles del " + data['nombre_rio'];
                                 
                                 this.rio_id=data['id'];
+                                this.nombre_rio=data['nombre_rio'];
+                                this.tipo_rio=data['tipo_rio'];
+                                this.longitud_m=data['longitud_m'];
                                 this.imagen = data['imagen'];
                                 var rename ="";
                                 var letra = String.fromCharCode(92);
@@ -323,7 +328,7 @@
                 this.tituloModal='';
                 this.rio_id=0;
                 this.gid = 0;
-                this.nombre = '';
+                this.nombre_rio = '';
                 this.tipo_rio = '';
                 this.longitud_m = '';
                 this.imagen=null;
@@ -362,5 +367,8 @@
     .text-error{
         color: red;
         font-weight: bold;
+    }
+    .text-modalVerImagen{
+      color: blue !important;
     }
 </style>

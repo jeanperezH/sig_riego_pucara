@@ -45,8 +45,7 @@ class CanalController extends Controller
         $canales->gid=$request->gid;
         $canales->nombre=$request->nombre;
         $canales->longitud=$request->longitud;
-        $canales->valv_i=$request->valv_i;
-        $canales->valv_f=$request->valv_f;
+        $canales->valvula_in=$request->valvula_in;
         
         //$canales->imagen=$request->imagen;
         /*if ($request->hasFile('imagen')) {

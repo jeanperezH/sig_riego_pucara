@@ -13,6 +13,7 @@ class Chacra extends Model
         'tipo_cultiv',
         'zona',
         'imagen',
+        'nombre_usu',
         'geom'
     ];
     public $timestamps = false;

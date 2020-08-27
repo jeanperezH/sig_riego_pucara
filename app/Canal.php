@@ -14,8 +14,7 @@ class Canal extends Model
         'longitud',
         'zona',
         'imagen',
-        'valv_i',
-        'valv_f',
+        'valvula_in',
         'geom'
     ];
     public $timestamps = false;

@@ -43,7 +43,7 @@ class RioController extends Controller
         
         $rios = Rio::findOrFail($request->id);
         $rios->gid=$request->gid;
-        $rios->nombre=$request->nombre;
+        $rios->nombre_rio=$request->nombre_rio;
         $rios->tipo_rio=$request->tipo_rio;
         $rios->longitud_m=$request->longitud_m;
         

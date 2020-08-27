@@ -46,7 +46,7 @@ class ChacraController extends Controller
         $chacras->nombre=$request->nombre;
         $chacras->area_km2=$request->area_km2;
         $chacras->tipo_cutiv=$request->tipo_cutiv;
-        
+        $chacras->nombre_usu=$request->nombre_usu;
         //$chacras->imagen=$request->imagen;
         /*if ($request->hasFile('imagen')) {
             $chacras->imagen=$request->file('imagen')->store('public');

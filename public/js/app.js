@@ -1869,10 +1869,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1882,8 +1878,7 @@ __webpack_require__.r(__webpack_exports__);
       longitud: '',
       zona: '',
       imagen: '',
-      valv_i: '',
-      valv_f: '',
+      valvula_in: '',
       geom: '',
       arrayCanal: [],
       modal: 0,
@@ -1966,8 +1961,7 @@ __webpack_require__.r(__webpack_exports__);
         'id': this.canal_id,
         'nombre': this.nombre,
         'longitud': this.longitud,
-        'valv_i': this.valv_i,
-        'valv_f': this.valv_f,
+        'valvula_in': this.valvula_in,
         'imagen': this.imagen,
         'zona': this.zona,
         'geom': this.geom
@@ -1996,8 +1990,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.longitud = data['longitud'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
-                  this.valv_i = data['valv_i'];
-                  this.valv_f = data['valv_f'];
+                  this.valvula_in = data['valvula_in'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -2016,6 +2009,8 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
+                  this.nombre = data['nombre'];
+                  this.valvula_in = data['valvula_in'];
                   this.canal_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -2044,8 +2039,7 @@ __webpack_require__.r(__webpack_exports__);
       this.longitud = '';
       this.zona = '';
       this.imagen = '';
-      this.valv_i = '';
-      this.valv_f = '';
+      this.valvula_in = '';
       this.geom = '';
     }
   },
@@ -2237,10 +2231,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2250,8 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
       longitud: '',
       zona: '',
       imagen: '',
-      valv_i: '',
-      valv_f: '',
+      valvula_in: '',
       geom: '',
       arrayCanal: [],
       modal: 0,
@@ -2334,8 +2323,7 @@ __webpack_require__.r(__webpack_exports__);
         'id': this.canal_id,
         'nombre': this.nombre,
         'longitud': this.longitud,
-        'valv_i': this.valv_i,
-        'valv_f': this.valv_f,
+        'valvula_in': this.valvula_in,
         'imagen': this.imagen,
         'zona': this.zona,
         'geom': this.geom
@@ -2364,8 +2352,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.longitud = data['longitud'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
-                  this.valv_i = data['valv_i'];
-                  this.valv_f = data['valv_f'];
+                  this.valvula_in = data['valvula_in'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -2384,6 +2371,8 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
+                  this.nombre = data['nombre'];
+                  this.valvula_in = data['valvula_in'];
                   this.canal_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -2412,8 +2401,7 @@ __webpack_require__.r(__webpack_exports__);
       this.longitud = '';
       this.zona = '';
       this.imagen = '';
-      this.valv_i = '';
-      this.valv_f = '';
+      this.valvula_in = '';
       this.geom = '';
     }
   },
@@ -2605,10 +2593,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2618,8 +2602,7 @@ __webpack_require__.r(__webpack_exports__);
       longitud: '',
       zona: '',
       imagen: '',
-      valv_i: '',
-      valv_f: '',
+      valvula_in: '',
       geom: '',
       arrayCanal: [],
       modal: 0,
@@ -2702,8 +2685,7 @@ __webpack_require__.r(__webpack_exports__);
         'id': this.canal_id,
         'nombre': this.nombre,
         'longitud': this.longitud,
-        'valv_i': this.valv_i,
-        'valv_f': this.valv_f,
+        'valvula_in': this.valvula_in,
         'imagen': this.imagen,
         'zona': this.zona,
         'geom': this.geom
@@ -2732,8 +2714,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.longitud = data['longitud'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
-                  this.valv_i = data['valv_i'];
-                  this.valv_f = data['valv_f'];
+                  this.valvula_in = data['valvula_in'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -2752,6 +2733,8 @@ __webpack_require__.r(__webpack_exports__);
                 {
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
+                  this.nombre = data['nombre'];
+                  this.valvula_in = data['valvula_in'];
                   this.canal_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -2780,8 +2763,7 @@ __webpack_require__.r(__webpack_exports__);
       this.longitud = '';
       this.zona = '';
       this.imagen = '';
-      this.valv_i = '';
-      this.valv_f = '';
+      this.valvula_in = '';
       this.geom = '';
     }
   },
@@ -2970,6 +2952,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2978,6 +2970,7 @@ __webpack_require__.r(__webpack_exports__);
       nombre: '',
       area_km2: '',
       tipo_cutiv: '',
+      nombre_usu: '',
       zona: '',
       imagen: '',
       geom: '',
@@ -3068,6 +3061,7 @@ __webpack_require__.r(__webpack_exports__);
         'tipo_cutiv': this.tipo_cutiv,
         'zona': this.zona,
         'imagen': this.imagen,
+        'nombre_usu': this.nombre_usu,
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
@@ -3095,6 +3089,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.tipo_cutiv = data['tipo_cutiv'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -3114,6 +3109,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
                   this.chacra_id = data['id'];
+                  this.nombre = data['nombre'];
+                  this.tipo_cutiv = data['tipo_cutiv'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -3138,6 +3136,7 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.tituloModal = '';
       this.nombre = '';
+      this.nombre_usu = '';
       this.area_km2 = '';
       this.tipo_cutiv = '';
       this.zona = '';
@@ -3330,6 +3329,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3338,6 +3347,7 @@ __webpack_require__.r(__webpack_exports__);
       nombre: '',
       area_km2: '',
       tipo_cutiv: '',
+      nombre_usu: '',
       zona: '',
       imagen: '',
       geom: '',
@@ -3428,6 +3438,7 @@ __webpack_require__.r(__webpack_exports__);
         'tipo_cutiv': this.tipo_cutiv,
         'zona': this.zona,
         'imagen': this.imagen,
+        'nombre_usu': this.nombre_usu,
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
@@ -3455,6 +3466,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.tipo_cutiv = data['tipo_cutiv'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -3474,6 +3486,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
                   this.chacra_id = data['id'];
+                  this.nombre = data['nombre'];
+                  this.tipo_cutiv = data['tipo_cutiv'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -3498,6 +3513,7 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.tituloModal = '';
       this.nombre = '';
+      this.nombre_usu = '';
       this.area_km2 = '';
       this.tipo_cutiv = '';
       this.zona = '';
@@ -3690,6 +3706,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3698,6 +3724,7 @@ __webpack_require__.r(__webpack_exports__);
       nombre: '',
       area_km2: '',
       tipo_cutiv: '',
+      nombre_usu: '',
       zona: '',
       imagen: '',
       geom: '',
@@ -3788,6 +3815,7 @@ __webpack_require__.r(__webpack_exports__);
         'tipo_cutiv': this.tipo_cutiv,
         'zona': this.zona,
         'imagen': this.imagen,
+        'nombre_usu': this.nombre_usu,
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
@@ -3815,6 +3843,7 @@ __webpack_require__.r(__webpack_exports__);
                   this.tipo_cutiv = data['tipo_cutiv'];
                   this.zona = data['zona'];
                   this.imagen = data['imagen'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.geom = data['geom'];
                   break;
                 }
@@ -3834,6 +3863,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles del " + data['nombre'];
                   this.chacra_id = data['id'];
+                  this.nombre = data['nombre'];
+                  this.tipo_cutiv = data['tipo_cutiv'];
+                  this.nombre_usu = data['nombre_usu'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -3858,6 +3890,7 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.tituloModal = '';
       this.nombre = '';
+      this.nombre_usu = '';
       this.area_km2 = '';
       this.tipo_cutiv = '';
       this.zona = '';
@@ -4069,15 +4102,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       compuerta_id: 0,
       gid: 0,
       nombre: '',
-      horario: '',
+      hora_inici: '',
       zona: '',
-      dias: '',
+      hora_final: '',
       utmx: '',
       utmy: '',
       imagen: null,
@@ -4165,8 +4200,8 @@ __webpack_require__.r(__webpack_exports__);
         'gid': this.gid,
         'id': this.compuerta_id,
         'nombre': this.nombre,
-        'horario': this.horario,
-        'dias': this.dias,
+        'hora_inici': this.hora_inici,
+        'hora_final': this.hora_final,
         'zona': this.zona,
         'utmx': this.utmx,
         'utmy': this.utmy,
@@ -4202,8 +4237,8 @@ __webpack_require__.r(__webpack_exports__);
                   this.gid = data['gid'];
                   this.compuerta_id = data['id'];
                   this.nombre = data['nombre'];
-                  this.horario = data['horario'];
-                  this.dias = data['dias'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.zona = data['zona'];
                   this.utmx = data['utmx'];
                   this.utmy = data['utmy'];
@@ -4227,6 +4262,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles de la " + data['nombre']; //this.tipoAccion=2;
 
+                  this.nombre = data['nombre'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.compuerta_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -4252,8 +4290,8 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.compuerta_id = '';
       this.nombre = '';
-      this.horario = '';
-      this.dias = '';
+      this.hora_inici = '';
+      this.hora_final = '';
       this.zona = '';
       this.utmx = '';
       this.utmy = '';
@@ -4465,15 +4503,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       compuerta_id: 0,
       gid: 0,
       nombre: '',
-      horario: '',
+      hora_inici: '',
       zona: '',
-      dias: '',
+      hora_final: '',
       utmx: '',
       utmy: '',
       imagen: null,
@@ -4557,12 +4597,12 @@ __webpack_require__.r(__webpack_exports__);
           return;
       }*/
       var me = this;
-      axios.put('/compuertas/2/actualizar', {
+      axios.put('/compuertas/actualizar', {
         'gid': this.gid,
         'id': this.compuerta_id,
         'nombre': this.nombre,
-        'horario': this.horario,
-        'dias': this.dias,
+        'hora_inici': this.hora_inici,
+        'hora_final': this.hora_final,
         'zona': this.zona,
         'utmx': this.utmx,
         'utmy': this.utmy,
@@ -4598,8 +4638,8 @@ __webpack_require__.r(__webpack_exports__);
                   this.gid = data['gid'];
                   this.compuerta_id = data['id'];
                   this.nombre = data['nombre'];
-                  this.horario = data['horario'];
-                  this.dias = data['dias'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.zona = data['zona'];
                   this.utmx = data['utmx'];
                   this.utmy = data['utmy'];
@@ -4623,6 +4663,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles de la " + data['nombre']; //this.tipoAccion=2;
 
+                  this.nombre = data['nombre'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.compuerta_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -4648,8 +4691,8 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.compuerta_id = '';
       this.nombre = '';
-      this.horario = '';
-      this.dias = '';
+      this.hora_inici = '';
+      this.hora_final = '';
       this.zona = '';
       this.utmx = '';
       this.utmy = '';
@@ -4861,15 +4904,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       compuerta_id: 0,
       gid: 0,
       nombre: '',
-      horario: '',
+      hora_inici: '',
       zona: '',
-      dias: '',
+      hora_final: '',
       utmx: '',
       utmy: '',
       imagen: null,
@@ -4953,12 +4998,12 @@ __webpack_require__.r(__webpack_exports__);
           return;
       }*/
       var me = this;
-      axios.put('/compuertas/3/actualizar', {
+      axios.put('/compuertas/actualizar', {
         'gid': this.gid,
         'id': this.compuerta_id,
         'nombre': this.nombre,
-        'horario': this.horario,
-        'dias': this.dias,
+        'hora_inici': this.hora_inici,
+        'hora_final': this.hora_final,
         'zona': this.zona,
         'utmx': this.utmx,
         'utmy': this.utmy,
@@ -4994,8 +5039,8 @@ __webpack_require__.r(__webpack_exports__);
                   this.gid = data['gid'];
                   this.compuerta_id = data['id'];
                   this.nombre = data['nombre'];
-                  this.horario = data['horario'];
-                  this.dias = data['dias'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.zona = data['zona'];
                   this.utmx = data['utmx'];
                   this.utmy = data['utmy'];
@@ -5019,6 +5064,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tituloModal = "Detalles de la " + data['nombre']; //this.tipoAccion=2;
 
+                  this.nombre = data['nombre'];
+                  this.hora_inici = data['hora_inici'];
+                  this.hora_final = data['hora_final'];
                   this.compuerta_id = data['id'];
                   this.imagen = data['imagen'];
                   var rename = "";
@@ -5044,8 +5092,8 @@ __webpack_require__.r(__webpack_exports__);
       this.gid = 0;
       this.compuerta_id = '';
       this.nombre = '';
-      this.horario = '';
-      this.dias = '';
+      this.hora_inici = '';
+      this.hora_final = '';
       this.zona = '';
       this.utmx = '';
       this.utmy = '';
@@ -5281,12 +5329,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       rio_id: 0,
       gid: 0,
-      nombre: '',
+      nombre_rio: '',
       tipo_rio: '',
       longitud_m: '',
       imagen: null,
@@ -5308,7 +5358,7 @@ __webpack_require__.r(__webpack_exports__);
         'to': 0
       },
       offset: 3,
-      criterio: 'nombre',
+      criterio: 'nombre_rio',
       buscar: ''
     };
   },
@@ -5374,7 +5424,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.put('/rios/actualizar', {
         'gid': this.gid,
         'id': this.rio_id,
-        'nombre': this.nombre,
+        'nombre_rio': this.nombre_rio,
         'tipo_rio': this.tipo_rio,
         'longitud_m': this.longitud_m,
         'imagen': this.imagen,
@@ -5382,7 +5432,7 @@ __webpack_require__.r(__webpack_exports__);
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
-        me.listarRio(1, '', 'nombre');
+        me.listarRio(1, '', 'nombre_rio');
       })["catch"](function (error) {
         console.log(error);
       });
@@ -5397,11 +5447,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'actualizar':
                 {
                   this.modalActualizar = 1;
-                  this.tituloModal = "Actualizar " + data['nombre'];
+                  this.tituloModal = "Actualizar " + data['nombre_rio'];
                   this.tipoAccion = 2;
                   this.gid = data['gid'];
                   this.rio_id = data['id'];
-                  this.nombre = data['nombre'];
+                  this.nombre_rio = data['nombre_rio'];
                   this.tipo_rio = data['tipo_rio'];
                   this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
@@ -5423,8 +5473,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'ver':
                 {
                   this.modal = 1;
-                  this.tituloModal = "Detalles del " + data['nombre'];
+                  this.tituloModal = "Detalles del " + data['nombre_rio'];
                   this.rio_id = data['id'];
+                  this.nombre_rio = data['nombre_rio'];
+                  this.tipo_rio = data['tipo_rio'];
+                  this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -5448,7 +5501,7 @@ __webpack_require__.r(__webpack_exports__);
       this.tituloModal = '';
       this.rio_id = 0;
       this.gid = 0;
-      this.nombre = '';
+      this.nombre_rio = '';
       this.tipo_rio = '';
       this.longitud_m = '';
       this.imagen = null;
@@ -5640,12 +5693,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       rio_id: 0,
       gid: 0,
-      nombre: '',
+      nombre_rio: '',
       tipo_rio: '',
       longitud_m: '',
       imagen: null,
@@ -5667,7 +5722,7 @@ __webpack_require__.r(__webpack_exports__);
         'to': 0
       },
       offset: 3,
-      criterio: 'nombre',
+      criterio: 'nombre_rio',
       buscar: ''
     };
   },
@@ -5733,7 +5788,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.put('/rios/actualizar', {
         'gid': this.gid,
         'id': this.rio_id,
-        'nombre': this.nombre,
+        'nombre_rio': this.nombre_rio,
         'tipo_rio': this.tipo_rio,
         'longitud_m': this.longitud_m,
         'imagen': this.imagen,
@@ -5741,7 +5796,7 @@ __webpack_require__.r(__webpack_exports__);
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
-        me.listarRio(1, '', 'nombre');
+        me.listarRio(1, '', 'nombre_rio');
       })["catch"](function (error) {
         console.log(error);
       });
@@ -5756,11 +5811,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'actualizar':
                 {
                   this.modalActualizar = 1;
-                  this.tituloModal = "Actualizar " + data['nombre'];
+                  this.tituloModal = "Actualizar " + data['nombre_rio'];
                   this.tipoAccion = 2;
                   this.gid = data['gid'];
                   this.rio_id = data['id'];
-                  this.nombre = data['nombre'];
+                  this.nombre_rio = data['nombre_rio'];
                   this.tipo_rio = data['tipo_rio'];
                   this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
@@ -5782,8 +5837,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'ver':
                 {
                   this.modal = 1;
-                  this.tituloModal = "Detalles del " + data['nombre'];
+                  this.tituloModal = "Detalles del " + data['nombre_rio'];
                   this.rio_id = data['id'];
+                  this.nombre_rio = data['nombre_rio'];
+                  this.tipo_rio = data['tipo_rio'];
+                  this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -5807,7 +5865,7 @@ __webpack_require__.r(__webpack_exports__);
       this.tituloModal = '';
       this.rio_id = 0;
       this.gid = 0;
-      this.nombre = '';
+      this.nombre_rio = '';
       this.tipo_rio = '';
       this.longitud_m = '';
       this.imagen = null;
@@ -5999,12 +6057,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       rio_id: 0,
       gid: 0,
-      nombre: '',
+      nombre_rio: '',
       tipo_rio: '',
       longitud_m: '',
       imagen: null,
@@ -6026,7 +6086,7 @@ __webpack_require__.r(__webpack_exports__);
         'to': 0
       },
       offset: 3,
-      criterio: 'nombre',
+      criterio: 'nombre_rio',
       buscar: ''
     };
   },
@@ -6092,7 +6152,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.put('/rios/actualizar', {
         'gid': this.gid,
         'id': this.rio_id,
-        'nombre': this.nombre,
+        'nombre_rio': this.nombre_rio,
         'tipo_rio': this.tipo_rio,
         'longitud_m': this.longitud_m,
         'imagen': this.imagen,
@@ -6100,7 +6160,7 @@ __webpack_require__.r(__webpack_exports__);
         'geom': this.geom
       }).then(function (response) {
         me.cerrarModal();
-        me.listarRio(1, '', 'nombre');
+        me.listarRio(1, '', 'nombre_rio');
       })["catch"](function (error) {
         console.log(error);
       });
@@ -6115,11 +6175,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'actualizar':
                 {
                   this.modalActualizar = 1;
-                  this.tituloModal = "Actualizar " + data['nombre'];
+                  this.tituloModal = "Actualizar " + data['nombre_rio'];
                   this.tipoAccion = 2;
                   this.gid = data['gid'];
                   this.rio_id = data['id'];
-                  this.nombre = data['nombre'];
+                  this.nombre_rio = data['nombre_rio'];
                   this.tipo_rio = data['tipo_rio'];
                   this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
@@ -6141,8 +6201,11 @@ __webpack_require__.r(__webpack_exports__);
               case 'ver':
                 {
                   this.modal = 1;
-                  this.tituloModal = "Detalles del " + data['nombre'];
+                  this.tituloModal = "Detalles del " + data['nombre_rio'];
                   this.rio_id = data['id'];
+                  this.nombre_rio = data['nombre_rio'];
+                  this.tipo_rio = data['tipo_rio'];
+                  this.longitud_m = data['longitud_m'];
                   this.imagen = data['imagen'];
                   var rename = "";
                   var letra = String.fromCharCode(92);
@@ -6166,7 +6229,7 @@ __webpack_require__.r(__webpack_exports__);
       this.tituloModal = '';
       this.rio_id = 0;
       this.gid = 0;
-      this.nombre = '';
+      this.nombre_rio = '';
       this.tipo_rio = '';
       this.longitud_m = '';
       this.imagen = null;
@@ -10809,7 +10872,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n.text-modalVerImagen{\n  color: blue !important;\n}\n", ""]);
 
 // exports
 
@@ -10828,7 +10891,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n.text-modalVerImagen{\n  color: blue !important;\n}\n", ""]);
 
 // exports
 
@@ -10847,7 +10910,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.modal-content{\n    \n    width: 100% !important;\n    position: absolute !important;\n}\n.mostrar{\n    \n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.actualizar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    background-color: #3c29297a !important;\n}\n.div-error{\n    display: flex;\n    justify-content: center;\n}\n.text-error{\n    color: red;\n    font-weight: bold;\n}\n.text-modalVerImagen{\n  color: blue !important;\n}\n", ""]);
 
 // exports
 
@@ -42716,12 +42779,8 @@ var render = function() {
                         _vm._v("Canal de riego")
                       ]),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_i" } }, [
+                      _c("option", { attrs: { value: "valv_in" } }, [
                         _vm._v("Válvula apertura")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_f" } }, [
-                        _vm._v("Válvula cierre")
                       ])
                     ]
                   ),
@@ -42804,11 +42863,7 @@ var render = function() {
                     _c("td", { domProps: { textContent: _vm._s(canal.zona) } }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_i) }
-                    }),
-                    _vm._v(" "),
-                    _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_f) }
+                      domProps: { textContent: _vm._s(canal.valvula_in) }
                     }),
                     _vm._v(" "),
                     _c("td", [
@@ -43086,54 +43141,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.valv_i,
-                              expression: "valv_i"
+                              value: _vm.valvula_in,
+                              expression: "valvula_in"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "válvula x" },
-                          domProps: { value: _vm.valv_i },
+                          domProps: { value: _vm.valvula_in },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.valv_i = $event.target.value
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-md-3 form-control-label",
-                          attrs: { for: "text-input" }
-                        },
-                        [_vm._v("Válvula de cierre")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-9" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.valv_f,
-                              expression: "valv_f"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text", placeholder: "válvula y" },
-                          domProps: { value: _vm.valv_f },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.valv_f = $event.target.value
+                              _vm.valvula_in = $event.target.value
                             }
                           }
                         })
@@ -43278,9 +43298,24 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Canales de Riego ")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Canal de riego: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Válvula de apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.valvula_in) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -43324,8 +43359,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
         _c("th", [_vm._v("Válvula Apertura")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Válvula Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("imagen")])
       ])
@@ -43398,12 +43431,8 @@ var render = function() {
                         _vm._v("Canal de riego")
                       ]),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_i" } }, [
+                      _c("option", { attrs: { value: "valv_in" } }, [
                         _vm._v("Válvula apertura")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_f" } }, [
-                        _vm._v("Válvula cierre")
                       ])
                     ]
                   ),
@@ -43486,11 +43515,7 @@ var render = function() {
                     _c("td", { domProps: { textContent: _vm._s(canal.zona) } }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_i) }
-                    }),
-                    _vm._v(" "),
-                    _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_f) }
+                      domProps: { textContent: _vm._s(canal.valvula_in) }
                     }),
                     _vm._v(" "),
                     _c("td", [
@@ -43768,54 +43793,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.valv_i,
-                              expression: "valv_i"
+                              value: _vm.valvula_in,
+                              expression: "valvula_in"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "válvula x" },
-                          domProps: { value: _vm.valv_i },
+                          domProps: { value: _vm.valvula_in },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.valv_i = $event.target.value
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-md-3 form-control-label",
-                          attrs: { for: "text-input" }
-                        },
-                        [_vm._v("Válvula de cierre")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-9" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.valv_f,
-                              expression: "valv_f"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text", placeholder: "válvula y" },
-                          domProps: { value: _vm.valv_f },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.valv_f = $event.target.value
+                              _vm.valvula_in = $event.target.value
                             }
                           }
                         })
@@ -43960,9 +43950,24 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Canales de Riego ")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Canal de riego: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Válvula de apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.valvula_in) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -44006,8 +44011,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
         _c("th", [_vm._v("Válvula Apertura")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Válvula Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("imagen")])
       ])
@@ -44080,12 +44083,8 @@ var render = function() {
                         _vm._v("Canal de riego")
                       ]),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_i" } }, [
+                      _c("option", { attrs: { value: "valv_in" } }, [
                         _vm._v("Válvula apertura")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "valv_f" } }, [
-                        _vm._v("Válvula cierre")
                       ])
                     ]
                   ),
@@ -44168,11 +44167,7 @@ var render = function() {
                     _c("td", { domProps: { textContent: _vm._s(canal.zona) } }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_i) }
-                    }),
-                    _vm._v(" "),
-                    _c("td", {
-                      domProps: { textContent: _vm._s(canal.valv_f) }
+                      domProps: { textContent: _vm._s(canal.valvula_in) }
                     }),
                     _vm._v(" "),
                     _c("td", [
@@ -44450,54 +44445,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.valv_i,
-                              expression: "valv_i"
+                              value: _vm.valvula_in,
+                              expression: "valvula_in"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "válvula x" },
-                          domProps: { value: _vm.valv_i },
+                          domProps: { value: _vm.valvula_in },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.valv_i = $event.target.value
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-md-3 form-control-label",
-                          attrs: { for: "text-input" }
-                        },
-                        [_vm._v("Válvula de cierre")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-9" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.valv_f,
-                              expression: "valv_f"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { type: "text", placeholder: "válvula y" },
-                          domProps: { value: _vm.valv_f },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.valv_f = $event.target.value
+                              _vm.valvula_in = $event.target.value
                             }
                           }
                         })
@@ -44642,9 +44602,24 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Canales de Riego ")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Canal de riego: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Válvula de apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.valvula_in) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -44688,8 +44663,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
         _c("th", [_vm._v("Válvula Apertura")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Válvula Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("imagen")])
       ])
@@ -44764,6 +44737,10 @@ var render = function() {
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_cutiv" } }, [
                         _vm._v("Tipo cultivo")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "nombre_usu" } }, [
+                        _vm._v("Propietario")
                       ])
                     ]
                   ),
@@ -44847,6 +44824,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(chacra.tipo_cutiv) }
+                    }),
+                    _vm._v(" "),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(chacra.nombre_usu) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -45144,6 +45125,41 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Propietario")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-9" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.nombre_usu,
+                              expression: "nombre_usu"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", placeholder: "Hortalizas" },
+                          domProps: { value: _vm.nombre_usu },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.nombre_usu = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -45282,9 +45298,32 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Chacras del sistema de riego")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Chacra: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de cultivo:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_cutiv) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Propietario:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.nombre_usu) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -45326,6 +45365,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Area")]),
         _vm._v(" "),
         _c("th", [_vm._v("Tipo cultivo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Propietario")]),
         _vm._v(" "),
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
@@ -45402,6 +45443,10 @@ var render = function() {
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_cutiv" } }, [
                         _vm._v("Tipo cultivo")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "nombre_usu" } }, [
+                        _vm._v("Propietario")
                       ])
                     ]
                   ),
@@ -45485,6 +45530,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(chacra.tipo_cutiv) }
+                    }),
+                    _vm._v(" "),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(chacra.nombre_usu) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -45782,6 +45831,41 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Propietario")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-9" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.nombre_usu,
+                              expression: "nombre_usu"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", placeholder: "Hortalizas" },
+                          domProps: { value: _vm.nombre_usu },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.nombre_usu = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -45920,9 +46004,32 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Chacras del sistema de riego")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Chacra: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de cultivo:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_cutiv) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Propietario:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.nombre_usu) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -45964,6 +46071,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Area")]),
         _vm._v(" "),
         _c("th", [_vm._v("Tipo cultivo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Propietario")]),
         _vm._v(" "),
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
@@ -46040,6 +46149,10 @@ var render = function() {
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_cutiv" } }, [
                         _vm._v("Tipo cultivo")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "nombre_usu" } }, [
+                        _vm._v("Propietario")
                       ])
                     ]
                   ),
@@ -46123,6 +46236,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(chacra.tipo_cutiv) }
+                    }),
+                    _vm._v(" "),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(chacra.nombre_usu) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -46420,6 +46537,41 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 form-control-label",
+                          attrs: { for: "text-input" }
+                        },
+                        [_vm._v("Propietario")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-9" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.nombre_usu,
+                              expression: "nombre_usu"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", placeholder: "Hortalizas" },
+                          domProps: { value: _vm.nombre_usu },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.nombre_usu = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -46558,9 +46710,32 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Detalles")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Chacras del sistema de riego")])
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Chacra: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de cultivo:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_cutiv) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Propietario:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.nombre_usu) }
+                          })
+                        ])
                       ])
                     ],
                     1
@@ -46602,6 +46777,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Area")]),
         _vm._v(" "),
         _c("th", [_vm._v("Tipo cultivo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Propietario")]),
         _vm._v(" "),
         _c("th", [_vm._v("Zona")]),
         _vm._v(" "),
@@ -46675,15 +46852,13 @@ var render = function() {
                       _vm._v("compuerta")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "start_at" } }, [
-                      _vm._v("Hora apertura")
+                    _c("option", { attrs: { value: "hora_inici" } }, [
+                      _vm._v("Hora Apertura")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "end_at" } }, [
-                      _vm._v("Hora cierre")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "dias" } }, [_vm._v("dia")])
+                    _c("option", { attrs: { value: "hora_final" } }, [
+                      _vm._v("Hora Cierre")
+                    ])
                   ]
                 ),
                 _vm._v(" "),
@@ -46748,11 +46923,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.horario) }
+                      domProps: { textContent: _vm._s(compuerta.hora_inici) }
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.dias) }
+                      domProps: { textContent: _vm._s(compuerta.hora_final) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -46999,7 +47174,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Horario")]
+                        [_vm._v("Hora Apertura")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -47008,19 +47183,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.horario,
-                              expression: "horario"
+                              value: _vm.hora_inici,
+                              expression: "hora_inici"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "8:00 - 10:00" },
-                          domProps: { value: _vm.horario },
+                          domProps: { value: _vm.hora_inici },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.horario = $event.target.value
+                              _vm.hora_inici = $event.target.value
                             }
                           }
                         })
@@ -47034,7 +47209,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Dias")]
+                        [_vm._v("Hora Cierre")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -47043,8 +47218,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.dias,
-                              expression: "dias"
+                              value: _vm.hora_final,
+                              expression: "hora_final"
                             }
                           ],
                           staticClass: "form-control",
@@ -47052,13 +47227,13 @@ var render = function() {
                             type: "text",
                             placeholder: "lunes - viernes"
                           },
-                          domProps: { value: _vm.dias },
+                          domProps: { value: _vm.hora_final },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.dias = $event.target.value
+                              _vm.hora_final = $event.target.value
                             }
                           }
                         })
@@ -47273,12 +47448,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Una de las compuertas mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Compuerta: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_inici) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Cierre:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_final) }
+                          })
                         ])
                       ])
                     ],
@@ -47318,9 +47512,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Compuerta")]),
         _vm._v(" "),
-        _c("th", [_vm._v("horario")]),
+        _c("th", [_vm._v("Hora Apertura")]),
         _vm._v(" "),
-        _c("th", [_vm._v("dias")]),
+        _c("th", [_vm._v("Hora Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("zona")]),
         _vm._v(" "),
@@ -47398,15 +47592,13 @@ var render = function() {
                       _vm._v("compuerta")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "start_at" } }, [
-                      _vm._v("Hora apertura")
+                    _c("option", { attrs: { value: "hora_inici" } }, [
+                      _vm._v("Hora Apertura")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "end_at" } }, [
-                      _vm._v("Hora cierre")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "dias" } }, [_vm._v("dia")])
+                    _c("option", { attrs: { value: "hora_final" } }, [
+                      _vm._v("Hora Cierre")
+                    ])
                   ]
                 ),
                 _vm._v(" "),
@@ -47471,11 +47663,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.horario) }
+                      domProps: { textContent: _vm._s(compuerta.hora_inici) }
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.dias) }
+                      domProps: { textContent: _vm._s(compuerta.hora_final) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -47722,7 +47914,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Horario")]
+                        [_vm._v("Hora Apertura")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -47731,19 +47923,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.horario,
-                              expression: "horario"
+                              value: _vm.hora_inici,
+                              expression: "hora_inici"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "8:00 - 10:00" },
-                          domProps: { value: _vm.horario },
+                          domProps: { value: _vm.hora_inici },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.horario = $event.target.value
+                              _vm.hora_inici = $event.target.value
                             }
                           }
                         })
@@ -47757,7 +47949,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Dias")]
+                        [_vm._v("Hora Cierre")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -47766,8 +47958,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.dias,
-                              expression: "dias"
+                              value: _vm.hora_final,
+                              expression: "hora_final"
                             }
                           ],
                           staticClass: "form-control",
@@ -47775,13 +47967,13 @@ var render = function() {
                             type: "text",
                             placeholder: "lunes - viernes"
                           },
-                          domProps: { value: _vm.dias },
+                          domProps: { value: _vm.hora_final },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.dias = $event.target.value
+                              _vm.hora_final = $event.target.value
                             }
                           }
                         })
@@ -47996,12 +48188,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Una de las compuertas mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Compuerta: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_inici) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Cierre:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_final) }
+                          })
                         ])
                       ])
                     ],
@@ -48041,9 +48252,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Compuerta")]),
         _vm._v(" "),
-        _c("th", [_vm._v("horario")]),
+        _c("th", [_vm._v("Hora Apertura")]),
         _vm._v(" "),
-        _c("th", [_vm._v("dias")]),
+        _c("th", [_vm._v("Hora Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("zona")]),
         _vm._v(" "),
@@ -48121,15 +48332,13 @@ var render = function() {
                       _vm._v("compuerta")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "start_at" } }, [
-                      _vm._v("Hora apertura")
+                    _c("option", { attrs: { value: "hora_inici" } }, [
+                      _vm._v("Hora Apertura")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "end_at" } }, [
-                      _vm._v("Hora cierre")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "dias" } }, [_vm._v("dia")])
+                    _c("option", { attrs: { value: "hora_final" } }, [
+                      _vm._v("Hora Cierre")
+                    ])
                   ]
                 ),
                 _vm._v(" "),
@@ -48194,11 +48403,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.horario) }
+                      domProps: { textContent: _vm._s(compuerta.hora_inici) }
                     }),
                     _vm._v(" "),
                     _c("td", {
-                      domProps: { textContent: _vm._s(compuerta.dias) }
+                      domProps: { textContent: _vm._s(compuerta.hora_final) }
                     }),
                     _vm._v(" "),
                     _c("td", {
@@ -48445,7 +48654,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Horario")]
+                        [_vm._v("Hora Apertura")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -48454,19 +48663,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.horario,
-                              expression: "horario"
+                              value: _vm.hora_inici,
+                              expression: "hora_inici"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "8:00 - 10:00" },
-                          domProps: { value: _vm.horario },
+                          domProps: { value: _vm.hora_inici },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.horario = $event.target.value
+                              _vm.hora_inici = $event.target.value
                             }
                           }
                         })
@@ -48480,7 +48689,7 @@ var render = function() {
                           staticClass: "col-md-3 form-control-label",
                           attrs: { for: "text-input" }
                         },
-                        [_vm._v("Dias")]
+                        [_vm._v("Hora Cierre")]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-md-9" }, [
@@ -48489,8 +48698,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.dias,
-                              expression: "dias"
+                              value: _vm.hora_final,
+                              expression: "hora_final"
                             }
                           ],
                           staticClass: "form-control",
@@ -48498,13 +48707,13 @@ var render = function() {
                             type: "text",
                             placeholder: "lunes - viernes"
                           },
-                          domProps: { value: _vm.dias },
+                          domProps: { value: _vm.hora_final },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.dias = $event.target.value
+                              _vm.hora_final = $event.target.value
                             }
                           }
                         })
@@ -48719,12 +48928,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Una de las compuertas mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Compuerta: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Apertura:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_inici) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Hora de Cierre:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.hora_final) }
+                          })
                         ])
                       ])
                     ],
@@ -48764,9 +48992,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Compuerta")]),
         _vm._v(" "),
-        _c("th", [_vm._v("horario")]),
+        _c("th", [_vm._v("Hora Apertura")]),
         _vm._v(" "),
-        _c("th", [_vm._v("dias")]),
+        _c("th", [_vm._v("Hora Cierre")]),
         _vm._v(" "),
         _c("th", [_vm._v("zona")]),
         _vm._v(" "),
@@ -48898,12 +49126,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("option", { attrs: { value: "nombre" } }, [
+                      _c("option", { attrs: { value: "nombre_rio" } }, [
                         _vm._v("Rio")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_rio" } }, [
-                        _vm._v("Ripo rio")
+                        _vm._v("Tipo rio")
                       ])
                     ]
                   ),
@@ -48975,7 +49203,9 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.arrayRio, function(rio) {
                   return _c("tr", { key: rio.id }, [
-                    _c("td", { domProps: { textContent: _vm._s(rio.nombre) } }),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(rio.nombre_rio) }
+                    }),
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(rio.tipo_rio) }
@@ -49189,19 +49419,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.nombre,
-                              expression: "nombre"
+                              value: _vm.nombre_rio,
+                              expression: "nombre_rio"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "Río X" },
-                          domProps: { value: _vm.nombre },
+                          domProps: { value: _vm.nombre_rio },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.nombre = $event.target.value
+                              _vm.nombre_rio = $event.target.value
                             }
                           }
                         })
@@ -49401,7 +49631,7 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imagen")]),
+                        _c("h2", [_vm._v("IMAGEN")]),
                         _vm._v(" "),
                         _c("img", {
                           attrs: { src: this.imagen, width: "100%" }
@@ -49416,12 +49646,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Rios mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Nombre del río: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre_rio) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de río:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_rio) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Longitud:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.longitud_m) }
+                          })
                         ])
                       ])
                     ],
@@ -49534,12 +49783,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("option", { attrs: { value: "nombre" } }, [
+                      _c("option", { attrs: { value: "nombre_rio" } }, [
                         _vm._v("Rio")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_rio" } }, [
-                        _vm._v("Ripo rio")
+                        _vm._v("Tipo rio")
                       ])
                     ]
                   ),
@@ -49611,7 +49860,9 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.arrayRio, function(rio) {
                   return _c("tr", { key: rio.id }, [
-                    _c("td", { domProps: { textContent: _vm._s(rio.nombre) } }),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(rio.nombre_rio) }
+                    }),
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(rio.tipo_rio) }
@@ -49825,19 +50076,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.nombre,
-                              expression: "nombre"
+                              value: _vm.nombre_rio,
+                              expression: "nombre_rio"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "Río X" },
-                          domProps: { value: _vm.nombre },
+                          domProps: { value: _vm.nombre_rio },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.nombre = $event.target.value
+                              _vm.nombre_rio = $event.target.value
                             }
                           }
                         })
@@ -50037,7 +50288,7 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imagen")]),
+                        _c("h2", [_vm._v("IMAGEN")]),
                         _vm._v(" "),
                         _c("img", {
                           attrs: { src: this.imagen, width: "100%" }
@@ -50052,12 +50303,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Rios mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Nombre del río: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre_rio) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de río:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_rio) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Longitud:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.longitud_m) }
+                          })
                         ])
                       ])
                     ],
@@ -50170,12 +50440,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("option", { attrs: { value: "nombre" } }, [
+                      _c("option", { attrs: { value: "nombre_rio" } }, [
                         _vm._v("Rio")
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "tipo_rio" } }, [
-                        _vm._v("Ripo rio")
+                        _vm._v("Tipo rio")
                       ])
                     ]
                   ),
@@ -50247,7 +50517,9 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.arrayRio, function(rio) {
                   return _c("tr", { key: rio.id }, [
-                    _c("td", { domProps: { textContent: _vm._s(rio.nombre) } }),
+                    _c("td", {
+                      domProps: { textContent: _vm._s(rio.nombre_rio) }
+                    }),
                     _vm._v(" "),
                     _c("td", {
                       domProps: { textContent: _vm._s(rio.tipo_rio) }
@@ -50461,19 +50733,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.nombre,
-                              expression: "nombre"
+                              value: _vm.nombre_rio,
+                              expression: "nombre_rio"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", placeholder: "Río X" },
-                          domProps: { value: _vm.nombre },
+                          domProps: { value: _vm.nombre_rio },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.nombre = $event.target.value
+                              _vm.nombre_rio = $event.target.value
                             }
                           }
                         })
@@ -50673,7 +50945,7 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Imagen")]),
+                        _c("h2", [_vm._v("IMAGEN")]),
                         _vm._v(" "),
                         _c("img", {
                           attrs: { src: this.imagen, width: "100%" }
@@ -50688,12 +50960,31 @@ var render = function() {
                     { staticClass: "col-xs-12 col-sm-6 col-md-6" },
                     [
                       _c("center", [
-                        _c("h2", [_vm._v("Hora y día")]),
+                        _c("h2", [_vm._v("DETALLES")]),
                         _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Rios mas importantes de todo el sistema de riego"
-                          )
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Nombre del río: "),
+                          _c("div", { staticClass: "text-modalVerImagen" }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(_vm.nombre_rio) }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Tipo de río:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.tipo_rio) }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "card-text text-left" }, [
+                          _vm._v("Longitud:"),
+                          _c("td", {
+                            staticClass: "text-modalVerImagen",
+                            domProps: { textContent: _vm._s(_vm.longitud_m) }
+                          })
                         ])
                       ])
                     ],

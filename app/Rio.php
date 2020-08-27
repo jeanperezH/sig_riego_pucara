@@ -10,7 +10,7 @@ class Rio extends Model
         
         'gid',
         'id',
-        'nombre',
+        'nombre_rio',
         'tipo_rio',
         'longitud_m',
         'imagen',

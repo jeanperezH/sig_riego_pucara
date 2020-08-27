@@ -10,8 +10,8 @@
                         <div class="input-group">
                             <select class="form-control col-md-4" v-model="criterio" >
                                 <option value="nombre">Canal de riego</option>
-                                <option value="valv_i">Válvula apertura</option>
-                                <option value="valv_f">Válvula cierre</option>
+                                <option value="valv_in">Válvula apertura</option>
+                                
                             </select>
                             <input type="text" v-model="buscar" @keyup.enter="listarCanal(1,buscar,criterio)" class="form-control" placeholder="Canal de riego 1" >
                             <button type="submit" class="btn btn-primary" @click="listarCanal(1,buscar,criterio)" ><i class="fa fa-search"></i> Buscar</button>
@@ -26,7 +26,7 @@
                                 <th>Longitud</th>
                                 <th>Zona</th>
                                 <th>Válvula Apertura</th>
-                                <th>Válvula Cierre</th>
+                                
                                 <th>imagen</th>
                             </tr>
                         </thead>
@@ -36,8 +36,7 @@
                                 <td v-text="canal.nombre"></td>
                                 <td v-text="canal.longitud  + ' m'"></td>
                                 <td v-text="canal.zona"></td>
-                                <td v-text="canal.valv_i"></td>
-                                <td v-text="canal.valv_f"></td>
+                                <td v-text="canal.valvula_in"></td>
                                 
                                 <td>
                                     <button type="button" @click="abrirModalActualizar('canal','actualizar',canal)" class="btn btn-info btn-sm" >
@@ -98,15 +97,10 @@
                   <div class="form-group row">
                       <label class="col-md-3 form-control-label" for="text-input">Válvula de apertura</label>
                     <div class="col-md-9">
-                      <input type="text" v-model="valv_i" class="form-control" placeholder="válvula x">                                        
+                      <input type="text" v-model="valvula_in" class="form-control" placeholder="válvula x">                                        
                     </div>
                   </div>
-                  <div class="form-group row">
-                      <label class="col-md-3 form-control-label" for="text-input">Válvula de cierre</label>
-                    <div class="col-md-9">
-                      <input type="text" v-model="valv_f" class="form-control" placeholder="válvula y">                                        
-                    </div>
-                  </div>
+                  
                   <!--<div class="form-group row">
                       <label class="col-md-3 form-control-label" for="text-input" >Imagen</label>
                     <div class="col-md-9">
@@ -153,8 +147,10 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <center>
-                                <h2>Detalles</h2>
-                                <p>Canales de Riego </p>
+                                <h2>DETALLES</h2>
+                                <h6 class="card-text text-left">Canal de riego: <div class="text-modalVerImagen"><td v-text="nombre"></td></div> </h6>
+                                <h6 class="card-text text-left">Válvula de apertura:<td v-text="valvula_in" class="text-modalVerImagen"></td></h6>
+                                
                             </center>
                         </div>
                     </div>
@@ -184,8 +180,8 @@
                 longitud : '',
                 zona : '',
                 imagen : '',
-                valv_i : '',
-                valv_f : '',
+                valvula_in : '',
+                
                 geom:'',
                 arrayCanal:[],
                 modal : 0,
@@ -263,8 +259,8 @@
                     'id':this.canal_id,
                     'nombre':this.nombre,
                     'longitud':this.longitud,
-                    'valv_i':this.valv_i,
-                    'valv_f':this.valv_f,
+                    'valvula_in':this.valvula_in,
+                    
                     'imagen':this.imagen,
                     'zona':this.zona,
                     'geom':this.geom,
@@ -291,8 +287,8 @@
                                 this.longitud=data['longitud'];
                                 this.zona=data['zona'];
                                 this.imagen = data['imagen'];
-                                this.valv_i = data['valv_i'];
-                                this.valv_f = data['valv_f'];
+                                this.valvula_in = data['valvula_in'];
+                                
                                 this.geom = data['geom'];
                                 break;
                             }
@@ -309,6 +305,8 @@
                                 this.modal=1;
                                 this.tituloModal="Detalles del " + data['nombre'];
                                 
+                                this.nombre = data['nombre'];
+                                this.valvula_in = data['valvula_in'];
                                 this.canal_id=data['id'];
                                 this.imagen = data['imagen'];
                                 var rename ="";
@@ -335,8 +333,8 @@
                 this.longitud='';
                 this.zona='';
                 this.imagen='';
-                this.valv_i='';
-                this.valv_f='';
+                this.valvula_in='';
+                
                 this.geom='';
             }
         },
